@@ -53,19 +53,17 @@ hr {
   padding-top: 5%;
 }
 
-.uk-offcanvas-bar *, .uk-offcanvas-bar h2 {
+.uk-offcanvas-bar h3 {
   color: black;
 }
 
-.uk-offcanvas-bar h2 {
-  /* margin-top: 10%; */
-  padding-bottom: 3%;
+.uk-offcanvas-bar h5 {
+  color: black;
 }
 
-.uk-offcanvas-bar {
-  padding-left: 3%;
+#canFilt:hover {
+  color: white !important;
 }
-
 
 
 

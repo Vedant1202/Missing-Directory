@@ -54,8 +54,36 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline !important;
 }
 
+.uk-offcanvas-bar *, .uk-offcanvas-bar h2 {
+  color: black;
+}
 
+.uk-offcanvas-bar h2 {
+  /* margin-top: 10%; */
+  padding-bottom: 3%;
+}
 
+.uk-offcanvas-bar {
+  padding-left: 3%;
+}
+
+input {
+  background-color: white !important;
+  color: black !important;
+  padding-left: 16px !important;
+}
+
+::placeholder { /* Firefox, Chrome, Opera */
+    color: #dedede !important;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #dedede !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #dedede !important;
+}
 
 
 
