@@ -65,7 +65,7 @@
       <ul>
         <li>
           Default screen <br>
-          ![Alt text](/snaps/home/default.png?raw=true "Title")
+          ![Alt text](snaps/home/default.PNG?raw=true "Title")
           <!-- <img src="" alt=""> -->
         </li>
         <li>
