@@ -70,7 +70,7 @@
         </li>
         <li>
           Menu activated screen
-          <img src="./snaps/home/menu.png" alt="">
+          <img src="snaps/home/menu.png" alt="">
         </li>
         <li>
           Profile banner screen
