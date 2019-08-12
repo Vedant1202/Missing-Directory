@@ -60,7 +60,7 @@
 <p>
   <h3>Snapshots</h3>
 
-  <ol>
+  <ul>
 
     <li>
       <h4>Home Page</h4>
@@ -81,6 +81,6 @@
       </ul>
     </li>
 
-  </ol>
+  </ul>
 
 </p>
