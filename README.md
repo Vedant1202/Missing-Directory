@@ -59,9 +59,7 @@
 </p>
 <p>
   <h3>Snapshots</h3>
-
   <ul>
-
     <li>
       <h4>Home Page</h4>
       <ul>
@@ -80,7 +78,5 @@
         </li>
       </ul>
     </li>
-
   </ul>
-
 </p>
