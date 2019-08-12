@@ -65,16 +65,15 @@
       <ul>
         <li>
           Default screen <br>
-          ![Alt text](snaps/home/default.PNG?raw=true "Title")
-          <!-- <img src="" alt=""> -->
-        </li>
+          <img src="https://github.com/Vedant1202/Missing-Directory/blob/master/snaps/home/default.PNG?raw=true" alt="">
+        </li>        
         <li>
           Menu activated screen
-          <img src="snaps/home/menu.png" alt="">
+           <img src="https://github.com/Vedant1202/Missing-Directory/blob/master/snaps/home/menu.PNG?raw=true" alt="">
         </li>
         <li>
           Profile banner screen
-          <img src="./snaps/home/profile-banner.png" alt="">
+           <img src="https://github.com/Vedant1202/Missing-Directory/blob/master/snaps/home/profile-banner.PNG?raw=true" alt="">
         </li>
       </ul>
     </li>
