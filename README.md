@@ -67,7 +67,8 @@
       <ul>
         <li>
           Default screen
-          <img src="./snaps/home/default.png" alt="">
+          ![alt text](./snaps/home/default.png)
+          <!-- <img src="" alt=""> -->
         </li>
         <li>
           Menu activated screen
