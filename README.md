@@ -64,8 +64,8 @@
       <h4>Home Page</h4>
       <ul>
         <li>
-          Default screen
-          ![alt text](/snaps/home/default.png?raw=true)
+          Default screen <br>
+          ![Alt text](/snaps/home/default.png?raw=true "Title")
           <!-- <img src="" alt=""> -->
         </li>
         <li>
