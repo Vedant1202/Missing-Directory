@@ -1,5 +1,4 @@
 <h1>The Missing Directory</h1>
-<hr>
 <p>
   Repository for The Missing Hackathon on HackerEarth (2019).<br>
 </p>
@@ -57,4 +56,30 @@
       <b>backend/ </b>: Backend API (yet to be done)
     </li>
   </ul>
+</p>
+<p>
+  <h3>Snapshots</h3>
+
+  <ol>
+
+    <li>
+      <h4>Home Page</h4>
+      <ul>
+        <li>
+          Default screen
+          <img src="./snaps/home/default.png" alt="">
+        </li>
+        <li>
+          Menu activated screen
+          <img src="./snaps/home/menu.png" alt="">
+        </li>
+        <li>
+          Profile banner screen
+          <img src="./snaps/home/profile-banner.png" alt="">
+        </li>
+      </ul>
+    </li>
+
+  </ol>
+
 </p>
