@@ -66,7 +66,7 @@
         <li>
           Default screen <br>
           <img src="https://github.com/Vedant1202/Missing-Directory/blob/master/snaps/home/default.PNG?raw=true" alt="">
-        </li>        
+        </li>
         <li>
           Menu activated screen
            <img src="https://github.com/Vedant1202/Missing-Directory/blob/master/snaps/home/menu.PNG?raw=true" alt="">
@@ -74,6 +74,10 @@
         <li>
           Profile banner screen
            <img src="https://github.com/Vedant1202/Missing-Directory/blob/master/snaps/home/profile-banner.PNG?raw=true" alt="">
+        </li>
+        <li>
+          Filters tab screen
+           <img src="https://github.com/Vedant1202/Missing-Directory/blob/master/snaps/home/filters.PNG?raw=true" alt="">
         </li>
       </ul>
     </li>
