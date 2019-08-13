@@ -23,7 +23,7 @@
       <b>Wireframes/ </b>: Demo Mockups
     </li>
     <li>
-      <b>frontend/ </b>: Frontend Client SIde
+      <b>frontend/ </b>: Frontend Client Side
       <ul>
         <li>
           views/ : HTML pages
