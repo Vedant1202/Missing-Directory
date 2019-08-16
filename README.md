@@ -13,7 +13,7 @@
     <li>Vedant Nandoskar (<a href="https://www.github.com/Vedant1202">@Vedant1202</a>)</li>
     <li>Rishi Pandya (<a href="https://www.github.com/Rishi40">@Rishi40</a>)</li>
     <li>Devesh Bhangale (<a href="https://www.github.com/devesh1806">@devesh1806</a>)</li>
-    <li>Ankit Katre </li>
+    <li>Ankit Katre (<a href="https://github.com/ankitk12029">@ankitk12029</a>)</li>
   </ul>
 </p>
 <p>
