@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Missing Directory | Missing Profile</title>
+
+    <!-- CSS LIBRARIES IMPORT -->
+    <link rel="stylesheet" href="../css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/libs/uikit.min.css">
+
+    <!-- CUSTOM CSS IMPORTS -->
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/missingprofile.css">
+
+    <!-- JS LIBRARIES IMPORT -->
+    <script src="../js/libs/jquery.min.js" charset="utf-8"></script>
+    <script src="../js/libs/uikit.min.js" charset="utf-8"></script>
+    <script src="../js/libs/uikit-icons.js" charset="utf-8"></script>
+    <script src="../js/libs/bootstrap.min.js" charset="utf-8"></script>
+    <script src="../js/libs/popper.min.js" charset="utf-8"></script>
+
+  </head>
+
+  <body>
+
+
+    <!-- ========================================= NAVBAR =========================================== -->
+    <div uk-sticky="show-on-up: true; animation: uk-animation-slide-top;">
+      <nav class="uk-navbar-container navbar-main shadow" uk-navbar>
+        <div class="row" style="width: 100%;">
+          <div class="col-2" align="left" style="padding-left: 4%; padding-top: .5%;">
+            <a class="hamburger" uk-icon="icon: menu; ratio: 2" href="#offcanvas-usage" uk-toggle></a>
+          </div>
+          <div class="col-8" align="center" style="padding-top: .5%;">
+            <h1>The Missing Directory</h1>
+          </div>
+          <div class="col-2" align="right">
+            <div class="uk-inline">
+              <button class="btn btn-outline-secondary rounded-pill" type="button">
+                <div class="row">
+                  <div class="col-4" style="padding-left: 0;">
+                    <img src="../resources/images/placeholders/users/user-white.png" alt="" class="rounded-circle" style="max-width: 50px;">
+                  </div>
+                  <div class="col-8" align="center">
+                    <div style="padding-top: 20%;">Profile</div>
+                  </div>
+                </div>
+              </button>
+              <div uk-drop="mode: click">
+                  <div class="uk-card uk-card-body uk-card-default rounded-lg shadow-lg">
+                    <div class="row">
+                      <div class="col-5" align="left">
+                        <img src="../resources/images/placeholders/users/user-white.png" alt="" class="rounded-circle" style="max-width: 80px;">
+                      </div>
+                      <div class="col-7" align="left" style="padding-top: 5%;">
+                        <div class="row">
+                          <b>Sample User 1</b>
+                        </div>
+                        <div class="row">
+                          Police Investigator
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row" align="center" style="margin-top: 10%;">
+                      <div class="col-12">
+                        <button class="btn btn-primary rounded-pill btn-block">View Full Profile</button>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- ========================================= MENU =========================================== -->
+    <div id="offcanvas-usage" uk-offcanvas="overlay: true; mode: slide;">
+            <div class="uk-offcanvas-bar bg-light">
+    
+                <button class="uk-offcanvas-close uk-close-large" type="button" uk-close></button>
+    
+                <div class="row" style="margin-top: 20%;">
+                  <!-- <div class="col-5">
+    
+                  </div> -->
+                  <div class="col-12">
+                    <h2>
+                      The Missing Directory
+                    </h2>
+                    <hr style="border-color: grey; margin-bottom: 30px;">
+                  </div>
+                </div>
+    
+                <div class="container-fluid menubar">
+                  <a class="btn btn-link">Home</a><br>
+                  <a class="btn btn-link active-menu">Watching</a><br>
+                  <a class="btn btn-link">Face Recognition</a><br>
+                  <a class="btn btn-link">Helpline</a><br>
+                  <a class="btn btn-link">Logout</a>
+    
+                </div>
+            </div>
+        </div>
+
+     <!-- ========================================= CONTAINER =========================================== -->
+     <div class="main">
+            <div class="container">
+                <div class="header">
+                    <div class="row">
+                    <div class="col-3">
+                        <div class="move">
+                        <div class="card-column">
+                            <div class="uk-card uk-card-default uk-card-hover border border-secondary rounded">
+                                <div class="uk-card-media-top">
+                                    <img src="../resources/images/placeholders/users/user-black.png" alt="">
+                                </div>
+                                
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-9">
+                        <h4><b>General Details </b></h4> <hr> 
+                        <div class="row">
+                        <div class="col-6" >
+                            <p><i class="text-muted">First Name </i> : Devesh</p>
+                            <p><i class="text-muted">Last Name </i> : Bhangale</p>
+                            <p><i class="text-muted">Alias </i> : None</p>
+                            <p><i class="text-muted">Age </i> : 23</p>
+                            <p><i class="text-muted">Gender</i> : Male</p>
+                            
+                        </div> 
+                        <div class="col-6" >
+                                <p><i class="text-muted">Date of Birth </i> : 10/10/1996</p>
+                                <p><i class="text-muted">Home Address</i> : House 1,Matunga,Mumbai</p>
+                                <p><i class="text-muted">Nationality</i> : Indian</p>
+                                <p><i class="text-muted">Languages known</i> : English,Hindi</p> <br>
+                        </div> 
+                        </div>    
+                    </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                        <h4> <b>Physical Details </b> </h4> <hr>
+                        <div class="row">
+                            <div class="col-6">
+                                <p><i class="text-muted">Height</i> : 175 cm</p>
+                                <p><i class="text-muted">Weight</i> : 65 kg</p>
+                                <p><i class="text-muted">Identifications</i> : Birth mark on right hand </p>
+                            </div>
+                            <div class="col-6">
+                                <p><i class="text-muted">Eye color</i>: Dark Brown</p>
+                                <p><i class="text-muted">Skin color</i>: Medium-White to Light Brown </p>
+                                <p><i class="text-muted">Hair color</i>: Black</p>
+                                
+                            </div>
+                        </div>
+                </div>  
+
+                <div class="section">
+                        <h4> <b>Medical Details </b> </h4> <hr>
+                        <div class="row">
+                            <div class="col-6">
+                                <p><i class="text-muted">Allergy</i> : None</p>
+                                <p><i class="text-muted">Medications</i> : None</p>
+                                <p><i class="text-muted">Any other details</i> :</p>
+                                <!-- <form> -->
+                                <textarea name="message" rows="5" columns="30" style="width: 80%;" placeholder=" Details"></textarea>
+                                <!-- </form> -->
+                            </div>
+                            <div class="col-6">
+                                <p><i class="text-muted">Medical History</i> :</p>
+                                <!-- <form> -->
+                                <textarea name="message2" rows="5" columns="30" style="width: 80%;" placeholder="Each event separated by semicolons (;)"></textarea>
+                                <!-- </form>  -->
+                            </div>
+                        </div>
+                    </div>  
+
+                    <div class="section">
+                            <h4> <b>Contact Details </b> </h4> <hr>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p><i class="text-muted">Family Phone Number</i> : <b> 1234567890</b></p> 
+                                    <p><i class="text-muted">Case registered police station number</i> : <b> 34567</b></p>
+                                    <p><i class="text-muted">Police station address</i> :<b> Matunga,Mumbai </b></p> 
+                                    <p><i class="text-muted">Police station contact number</i> : <b> +100-6785 </b></p>
+                                </div>
+                                </div>
+                     </div>
+                     <div class="section">
+                            <h4> <b>Missing Report </b> </h4> <hr>
+                            <div class="row">
+                                <div class="col-6">
+                                    <span uk-icon="icon: chevron-double-right"></span>
+                                     Last seen at Thane (1 hour ago) 
+                                    
+                                </div>
+                                <div class="col-6">
+                                     <a  href="#modal-center" uk-toggle>  Details >></a>
+                                </div>
+                            </div> <br>
+                            <div class="row">
+                                    <div class="col-6">
+                                    <span uk-icon="icon: chevron-double-right"></span>
+                                        Last seen at Ghatkopar (2 days ago)
+                                    </div>
+                                    <div class="col-6">
+                                        <a  href="#modal-center" uk-toggle> Details >></a>
+                                    </div>
+                            </div> <br>
+                            <div class="row">
+                                    <div class="col-6">
+                                     <span uk-icon="icon: chevron-double-right"></span>
+                                        Last seen at Kurla (1 week ago)
+                                    </div>
+                                    <div class="col-6">
+                                       <a  href="#modal-center" uk-toggle> Details >></a>
+                                    </div>
+                            </div> <br>
+                            <div class="row">
+                                    <div class="col-6">
+                                    <span uk-icon="icon: chevron-double-right"></span>
+                                        Last seen at Dadar (1 month)
+                                    </div>
+                                    <div class="col-6">
+                                      <a  href="#modal-center" uk-toggle> Details >></a>
+                                    </div>
+                             </div> <br>
+                             <div class="row">
+                                    <div class="col-6">
+                                    <span uk-icon="icon: chevron-double-right"></span>
+                                        Missing Registered at Matunga (2 months ago)
+                                    </div>
+                                    <div class="col-6">
+                                        <a  href="#modal-center" uk-toggle> Details >></a>
+                                    </div>
+                            </div> <br>
+
+                            <div id="modal-center" class="uk-flex-top" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                                     <button class="uk-modal-close-default" type="button" uk-close></button>
+                                     <div class="section">
+                                         <center>
+                                        <h4> <b>Last Seen at Thane</b> </h4> 
+                                        </center> <hr>
+                                        <div class="row">
+                                        <div class="col-12">
+                                               <p>Detailed location: <b>Naupada,Thane West </b> </p>
+                                               <p>Reported By: <b> Mr.ABC </b></p>
+                                               <p>User Type: <b>Official </b></p>
+                                               <p>Designation: <b>Inspector </b></p>
+                                               <p>Time Reported: <b>16:30 </b></p>
+                                               <p>Date Reported: <b>13-08-2019</b> </p>
+                                               <p>Additional Info: <b>None </b></p>
+
+                                               <center>
+                                               <button type="button" class="btn btn-outline-primary">OK</button>
+                                               </center>
+                                        </div>  
+                                            
+                                        </div>
+                                   
+                                    </div>
+                                    </div>                   
+                                </div>
+                                <div id="modal-center" class="uk-flex-top" uk-modal>
+                                        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                                             <button class="uk-modal-close-default" type="button" uk-close></button>
+                                             <div class="section">
+                                                 <center>
+                                                <h4> <b>Last Seen at Thane</b> </h4> 
+                                                </center> <hr>
+                                                <div class="row">
+                                                <div class="col-12">
+                                                       <p>Detailed location: <b>Naupada,Thane West </b> </p>
+                                                       <p>Reported By: <b> Mr.ABC </b></p>
+                                                       <p>User Type: <b>Official </b></p>
+                                                       <p>Designation: <b>Inspector </b></p>
+                                                       <p>Time Reported: <b>16:30 </b></p>
+                                                       <p>Date Reported: <b>13-08-2019</b> </p>
+                                                       <p>Additional Info: <b>None </b></p>
+        
+                                                       <center>
+                                                       <button type="button" class="btn btn-outline-primary">OK</button>
+                                                       </center>
+                                                </div>  
+                                                    
+                                                </div>
+                                           
+                                            </div>
+                                            </div>                   
+                                 </div>
+                                 <div id="modal-center" class="uk-flex-top" uk-modal>
+                                        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                                             <button class="uk-modal-close-default" type="button" uk-close></button>
+                                             <div class="section">
+                                                 <center>
+                                                <h4> <b>Last Seen at Thane</b> </h4> 
+                                                </center> <hr>
+                                                <div class="row">
+                                                <div class="col-12">
+                                                       <p>Detailed location: <b>Naupada,Thane West </b> </p>
+                                                       <p>Reported By: <b> Mr.ABC </b></p>
+                                                       <p>User Type: <b>Official </b></p>
+                                                       <p>Designation: <b>Inspector </b></p>
+                                                       <p>Time Reported: <b>16:30 </b></p>
+                                                       <p>Date Reported: <b>13-08-2019</b> </p>
+                                                       <p>Additional Info: <b>None </b></p>
+        
+                                                       <center>
+                                                       <button type="button" class="btn btn-outline-primary">OK</button>
+                                                       </center>
+                                                </div>  
+                                                    
+                                                </div>
+                                           
+                                            </div>
+                                            </div>                   
+                                  </div>
+                                  <div id="modal-center" class="uk-flex-top" uk-modal>
+                                        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                                             <button class="uk-modal-close-default" type="button" uk-close></button>
+                                             <div class="section">
+                                                 <center>
+                                                <h4> <b>Last Seen at Thane</b> </h4> 
+                                                </center> <hr>
+                                                <div class="row">
+                                                <div class="col-12">
+                                                       <p>Detailed location: <b>Naupada,Thane West </b> </p>
+                                                       <p>Reported By: <b> Mr.ABC </b></p>
+                                                       <p>User Type: <b>Official </b></p>
+                                                       <p>Designation: <b>Inspector </b></p>
+                                                       <p>Time Reported: <b>16:30 </b></p>
+                                                       <p>Date Reported: <b>13-08-2019</b> </p>
+                                                       <p>Additional Info: <b>None </b></p>
+        
+                                                       <center>
+                                                       <button type="button" class="btn btn-outline-primary">OK</button>
+                                                       </center>
+                                                </div>  
+                                                    
+                                                </div>
+                                           
+                                            </div>
+                                            </div>                   
+                                  </div>
+                                  <div id="modal-center" class="uk-flex-top" uk-modal>
+                                        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                                             <button class="uk-modal-close-default" type="button" uk-close></button>
+                                             <div class="section">
+                                                 <center>
+                                                <h4> <b>Last Seen at Thane</b> </h4> 
+                                                </center> <hr>
+                                                <div class="row">
+                                                <div class="col-12">
+                                                       <p>Detailed location: <b>Naupada,Thane West </b> </p>
+                                                       <p>Reported By: <b> Mr.ABC </b></p>
+                                                       <p>User Type: <b>Official </b></p>
+                                                       <p>Designation: <b>Inspector </b></p>
+                                                       <p>Time Reported: <b>16:30 </b></p>
+                                                       <p>Date Reported: <b>13-08-2019</b> </p>
+                                                       <p>Additional Info: <b>None </b></p>
+        
+                                                       <center>
+                                                       <button type="button" class="btn btn-outline-primary">OK</button>
+                                                       </center>
+                                                </div>  
+                                                    
+                                                </div>
+                                           
+                                            </div>
+                                            </div>                   
+                                  </div>
+                            </div>
+                             
+                     </div>
+                    </div>  
+                </div>              
+            </div>
+    </div>
+     
+
+
+    </body>
