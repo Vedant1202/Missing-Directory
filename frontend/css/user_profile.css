@@ -46,7 +46,7 @@ hr {
 
 .rounded-pill {
   padding-left: 25px;
-  padding-right: 25px;
+  padding-right: 45px;
 }
 
 .btn-sm {
@@ -66,7 +66,17 @@ hr {
 }
 
 
+#profImgUpload {
+  display: none !important;
+}
 
+.col-3{
+  color: grey;
+}
 
+/* input{
+  border-radius: 5px;
+  border-style: groove;
+} */
 
 /*  */
