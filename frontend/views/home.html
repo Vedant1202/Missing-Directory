@@ -20,6 +20,9 @@
     <script src="../js/libs/bootstrap.min.js" charset="utf-8"></script>
     <script src="../js/libs/popper.min.js" charset="utf-8"></script>
 
+    <!-- UTILITY FUNCTIONS JS IMPORT -->
+    <script src="../js/utils.js" charset="utf-8"></script>
+
   </head>
   <body>
 
@@ -36,7 +39,7 @@
           </div>
           <div class="col-2" align="right">
             <div class="uk-inline">
-              <button class="btn btn-outline-secondary rounded-pill" type="button">
+              <button class="btn btn-outline-secondary rounded-pill" type="button" id="profileBtn">
                 <div class="row">
                   <div class="col-4" style="padding-left: 0;">
                     <img src="../resources/images/placeholders/users/user-white.png" alt="" class="rounded-circle" style="max-width: 50px;">
@@ -47,27 +50,34 @@
                 </div>
               </button>
               <div uk-drop="mode: click">
-                  <div class="uk-card uk-card-body uk-card-default rounded-lg shadow-lg">
-                    <div class="row">
-                      <div class="col-5" align="left">
-                        <img src="../resources/images/placeholders/users/user-white.png" alt="" class="rounded-circle" style="max-width: 80px;">
-                      </div>
-                      <div class="col-7" align="left" style="padding-top: 5%;">
-                        <div class="row">
-                          <b>Sample User 1</b>
-                        </div>
-                        <div class="row">
-                          Police Investigator
-                        </div>
-                      </div>
+                <div class="uk-card uk-card-body uk-card-default rounded-lg shadow-lg">
+                  <div class="row">
+                    <div class="col-5" align="left">
+                      <img src="../resources/images/placeholders/users/user-white.png" alt="" class="rounded-circle" style="max-width: 80px;">
                     </div>
-                    <div class="row" align="center" style="margin-top: 10%;">
-                      <div class="col-12">
-                        <button class="btn btn-primary rounded-pill btn-block">View Full Profile</button>
+                    <div class="col-7" align="left" style="padding-top: 5%;">
+                      <div class="row">
+                        <b>Sample User 1</b>
+                      </div>
+                      <div class="row">
+                        Police Investigator
                       </div>
                     </div>
                   </div>
+                  <div class="row" align="center" style="margin-top: 10%;">
+                    <div class="col-12">
+                      <button class="btn btn-primary rounded-pill btn-block">View Full Profile</button>
+                    </div>
+                  </div>
+                </div>
               </div>
+              <button class="btn btn-outline-secondary rounded-pill" type="button" id="logInBtn">
+                <div class="row" style="padding: 10px;">
+                  <div class="col-12" align="center">
+                    <div>Login/Register</div>
+                  </div>
+                </div>
+              </button>
             </div>
           </div>
         </div>
@@ -95,9 +105,9 @@
 
             <div class="container-fluid menubar">
               <a class="btn btn-link active-menu">Home</a><br>
-              <a class="btn btn-link">Watching</a><br>
-              <a class="btn btn-link">Face Recognition</a><br>
-              <a class="btn btn-link">Logout</a>
+              <a class="btn btn-link" id="watchingMenu">Watching</a><br>
+              <a class="btn btn-link" id="faceRecogMenu">Face Recognition</a><br>
+              <a class="btn btn-link" id="logoutMenu" onclick="Nav.assign('login-register.html');">Logout</a>
 
             </div>
         </div>
@@ -368,7 +378,8 @@
 
 
 
-
+    <!-- CUSTOM JS IMPORT -->
+    <script src="../js/home.js" charset="utf-8"></script>
 
   </body>
 </html>

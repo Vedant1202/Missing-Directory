@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Blog Site | Hello</title>
+    <title>The Missing Directory | Login/Register</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="icon" href="../images/icon.png"> -->
@@ -18,7 +18,10 @@
     <!-- JS LIBRARIES IMPORT -->
     <script src="../js/libs/jquery.min.js" charset="utf-8"></script>
     <script src="../js/libs/materialize.min.js" charset="utf-8"></script>
+    <script src="../js/libs/moment.min.js" charset="utf-8"></script>
 
+    <!-- UTILITY FUNCTIONS JS IMPORT -->
+    <script src="../js/utils.js" charset="utf-8"></script>
 
     <div class="container white z-depth-2" style="margin-bottom: 8%;">
     	<ul class="tabs light-blue">
@@ -53,7 +56,7 @@
     	<div id="register" class="col s12">
     		<div id="registerForm" class="col s12">
     			<div class="form-container">
-    				<h3 class="light-blue-text">Welcome</h3>
+    				<h3 class="light-blue-text">Register</h3>
     				<div class="row">
     					<!-- <div class="input-field col s6">
     						<input id="last_name" type="text" class="validate">
@@ -98,6 +101,13 @@
                 <span style="color: #a8a8a8;" for="date">Address</span>
                 <textarea id="address" class="validate"></textarea>
                 <span id="addressvalid" class="errelem">Please fill this field</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <span style="color: #a8a8a8;" for="date">Phone</span>
+                <input type="number" id="phone" class="validate" pattern=".{10,10}">
+                <span id="phonevalid" class="errelem">Please enter valid Phone number of 10 digits</span>
               </div>
             </div>
     				<!-- <div class="row">

@@ -1,4 +1,4 @@
-import pymysql
+# import pymysql
 from app import app
 from db import mysql
 import json
@@ -10,9 +10,9 @@ from time import gmtime, strftime
 import datetime
 # from utils import getLocalTime
 
-from user.add import user_add
-from authenticate.login import login
-from user.update import user_update
+from controller.user.add import user_add
+from controller.authenticate.login import login
+from controller.user.update import user_update
 
 
 CORS(app)
