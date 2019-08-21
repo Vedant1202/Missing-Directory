@@ -1,4 +1,7 @@
 
+var url = "http://127.0.0.1:5000/";
+
+
 //Navigation functions
 
 var Nav = /** @class */ (function() {

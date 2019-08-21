@@ -38,36 +38,36 @@ $('#loginBtn').click(function () {
 
 });
 
-$('#username').focusout(function () {
-
-  var uname = $(this).val();
-
-  data = {
-    'username': uname
-  };
-
-  $.ajax({
-    type: "POST",
-    url: 'http://localhost:5000/user/check',
-    data: data,
-    success: function(data) {
-      if (!data.valid) {
-        // Username is already taken
-        $('#username').addClass('err');
-        $('#takenuser').addClass('showelem');
-        $('#registerBtn').prop("disabled", true);
-      } else {
-        $('#username').removeClass('err');
-        $('#takenuser').removeClass('showelem');
-      }
-    },
-   error: function(error) {
-     console.log(error);
-   },
-   dataType: 'json'
-  });
-
-});
+// $('#username').focusout(function () {
+//
+//   var uname = $(this).val();
+//
+//   data = {
+//     'username': uname
+//   };
+//
+//   $.ajax({
+//     type: "POST",
+//     url: 'http://localhost:5000/user/check',
+//     data: data,
+//     success: function(data) {
+//       if (!data.valid) {
+//         // Username is already taken
+//         $('#username').addClass('err');
+//         $('#takenuser').addClass('showelem');
+//         $('#registerBtn').prop("disabled", true);
+//       } else {
+//         $('#username').removeClass('err');
+//         $('#takenuser').removeClass('showelem');
+//       }
+//     },
+//    error: function(error) {
+//      console.log(error);
+//    },
+//    dataType: 'json'
+//   });
+//
+// });
 
 
 

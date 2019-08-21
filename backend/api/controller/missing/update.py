@@ -12,38 +12,37 @@ from utils.utils import not_found, verify_session
 
 def user_update():
     try:
-        _name = request.form.getlist("username")[0]
-        _email = request.form.getlist("email")[0]
-        _password = request.form.getlist("password")[0]
-        _last_updated = int(request.form.getlist("last_updated")[0])
-        _address = request.form.getlist("address")[0]
-        _type = request.form.getlist("type")[0]
-        _phone = int(request.form.getlist("phone")[0])
-        _date_created = int(request.form.getlist("date_created")[0])
         _fname = request.form.getlist("fname")[0]
         _lname = request.form.getlist("lname")[0]
         _uid = request.form.getlist("uid")[0]
+        _medications = request.form.getlist("medications")[0]
+        _prescribed_by = request.form.getlist("prescribed_by")[0]
+        _address = request.form.getlist("address")[0]
+        _conditions = request.form.getlist("conditions")[0]
+        _height = request.form.getlist("height")[0]
+        _weight = request.form.getlist("weight")[0]
+        _identifications = request.form.getlist("identifications")[0]
+        _eye_color = request.form.getlist("eye_color")[0]
+        _skin_color = request.form.getlist("skin_color")[0]
+        _hair_color = request.form.getlist("hair_color")[0]
+        _city = request.form.getlist("city")[0]
         _skey = request.form.getlist("skey")[0]
-
+        _mid = request.form.getlist("mid")[0]
+        _date_created = int(time.time())
 
         # validate the received values
-        if _name and _email and _password and _skey and _last_updated and _address and _type and _phone and _date_created and _fname and _lname and request.method == "POST":
-            if verify_session(_skey, _uid):
-                # do not save password as a plain text
-                _hashed_password = generate_password_hash(_password)
-                # save edits
-                sql = "UPDATE user SET username=%s, email=%s, password=%s, last_updated=%s, address=%s, type=%s, phone=%s, date_created=%s, fname=%s, lname=%s WHERE uid=%s;"
-                data = (_name, _email, _hashed_password, _last_updated, _address, _type, _phone, _date_created, _fname, _lname, _uid)
-                conn = mysql.connect()
-                cursor = conn.cursor()
-                cursor.execute(sql, data)
-                conn.commit()
-                resp = jsonify("Success")
-                resp.status_code = 200
-            else:
-                resp = jsonify('Unauthorised')
-                resp.status_code = 405
-            print(resp)
+        if _uid and _medications and _prescribed_by and _address and _city and _conditions and _height and _weight and _identifications and _eye_color and _skin_color and _hair_color and _date_created and _fname and _lname and verify_session(_skey, _uid) and request.method == "POST":
+            # save edits
+            sql = "UPDATE missing SET fname=%s, lname=%s, uid=%s, medications=%s, prescribed_by=%s, conditions=%s, height=%s, weight=%s, identifications=%s, eye_color=%s, skin_color=%s, hair_color=%s, date_created=%s, address=%s, city=%s WHERE mid=%s;"
+            data = (_fname, _lname, _uid, _medications, _prescribed_by, _conditions, _height, _weight, _identifications, _eye_color, _skin_color, _hair_color, _date_created, _address, _city, _mid)
+            conn = mysql.connect()
+            cursor = conn.cursor()
+            cursor.execute(sql, data)
+            # print(rows)
+            conn.commit()
+            resp = jsonify(success=True)
+            resp.status_code = 200
+            # print(resp)
             return resp
         else:
             return not_found()

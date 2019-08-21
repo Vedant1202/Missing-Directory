@@ -12,7 +12,10 @@ import datetime
 
 from controller.user.add import user_add
 from controller.authenticate.login import login
+from controller.authenticate.logout import logout
 from controller.user.update import user_update
+from controller.missing.fetch import missing_fetch, missing_fetch_search
+from controller.missing.add import missing_add
 
 
 CORS(app)
@@ -37,18 +40,46 @@ def update_user():
     return user_update()
 
 
-# user add route
-# @app.route("/user/edit", methods=["POST"])
-# @cross_origin()
-# def add_user():
-#     return user_edit()
-
-
 # # login route
 @app.route("/login", methods=["POST"])
 # # @cross_origin()
 def login_user():
     return login()
+
+
+# # logout route
+@app.route("/logout", methods=["POST"])
+# # @cross_origin()
+def logout_user():
+    return logout()
+
+
+# # missing profiles fetch route
+@app.route("/missing/fetch", methods=["POST"])
+# # @cross_origin()
+def fetch_missing():
+    return missing_fetch()
+
+
+# # missing profiles fetch route
+@app.route("/missing/search", methods=["POST"])
+# # @cross_origin()
+def fetch_missing_search():
+    return missing_fetch_search()
+
+
+# # missing profiles add route
+@app.route("/missing/add", methods=["POST"])
+# # @cross_origin()
+def add_missing():
+    return missing_add()
+
+
+# user add route
+# @app.route("/user/edit", methods=["POST"])
+# @cross_origin()
+# def add_user():
+#     return user_edit()
 
 
 #

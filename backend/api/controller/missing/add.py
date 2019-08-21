@@ -7,46 +7,43 @@ from flask import flash, request
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_cors import CORS
 import time
-from utils.utils import not_found, create_session, calculate_age
+from utils.utils import not_found, create_session, calculate_age, verify_session
 
 
 
 
-def user_add(type="general"):
+def missing_add():
     try:
         _fname = request.form.getlist("fname")[0]
         _lname = request.form.getlist("lname")[0]
-        _username = request.form.getlist("username")[0]
-        _email = request.form.getlist("email")[0]
-        _password = request.form.getlist("password")[0]
+        _uid = request.form.getlist("uid")[0]
+        _medications = request.form.getlist("medications")[0]
+        _prescribed_by = request.form.getlist("prescribed_by")[0]
         _address = request.form.getlist("address")[0]
-        _phone = int(request.form.getlist("phone")[0])
-        _date = request.form.getlist("date")[0]
-        _last_updated = int(time.time())
+        _conditions = request.form.getlist("conditions")[0]
+        _height = request.form.getlist("height")[0]
+        _weight = request.form.getlist("weight")[0]
+        _identifications = request.form.getlist("identifications")[0]
+        _eye_color = request.form.getlist("eye_color")[0]
+        _skin_color = request.form.getlist("skin_color")[0]
+        _hair_color = request.form.getlist("hair_color")[0]
+        _city = request.form.getlist("city")[0]
+        _skey = request.form.getlist("skey")[0]
+        _age = request.form.getlist("age")[0]
+        _gender = request.form.getlist("gender")[0]
         _date_created = int(time.time())
-        _age = calculate_age(time.strptime(_date, '%Y-%m-%d'))
-        _type = type
 
-        print(_password)
         # validate the received values
-        if _username and _email and _password and _age and _date and _last_updated and _address and _type and _phone and _date_created and _fname and _lname and request.method == "POST":
-            # do not save password as a plain text
-            _hashed_password = generate_password_hash(_password)
+        if _uid and _medications and _prescribed_by and _address and _city and _age and _conditions and _height and _weight and _identifications and _eye_color and _skin_color and _hair_color and _date_created and _gender and _fname and _lname and verify_session(_skey, _uid) and request.method == "POST":
             # save edits
-            sql = "INSERT INTO user(username, email, password, last_updated, address, type, phone, date_created, fname, lname, age, bdate) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            data = (_username, _email, _hashed_password, _last_updated, _address, _type, _phone, _date_created, _fname, _lname, _age, _date)
+            sql = "INSERT INTO missing(fname, lname, uid, medications, prescribed_by, conditions, height, weight, identifications, eye_color, skin_color, hair_color, date_created, address, city, age, gender) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"
+            data = (_fname, _lname, _uid, _medications, _prescribed_by, _conditions, _height, _weight, _identifications, _eye_color, _skin_color, _hair_color, _date_created, _address, _city, _age, _gender)
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute(sql, data)
-            sql2 = "SELECT uid FROM user WHERE username=%s"
-            data2 = (_username)
-            cursor.execute(sql2, data2)
-            rows = cursor.fetchone()
             # print(rows)
             conn.commit()
-            uid = rows[0]
-            skey = create_session(uid)
-            resp = jsonify(uid=uid, skey=skey)
+            resp = jsonify(success=True)
             resp.status_code = 200
             # print(resp)
             return resp

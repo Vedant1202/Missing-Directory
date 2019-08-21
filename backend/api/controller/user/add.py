@@ -56,6 +56,6 @@ def user_add(type="general"):
         print('====================== EXCEPTION ========================')
         print(e)
     finally:
-        print('Done')
-        # cursor.close()
-        # conn.close()
+        # print('Done')
+        cursor.close()
+        conn.close()

@@ -15,7 +15,6 @@ def not_found(error=None):
     message = {"status": 404, "message": "Not Found: " + request.url}
     resp = jsonify(message)
     resp.status_code = 404
-
     return resp
 
 
@@ -34,22 +33,19 @@ def check_session(uid):
         rows = cursor.fetchall()
         conn.commit()
         # print(len(rows))
-        print('log')
-        print(rows[0])
-        print('log')
         if rows:
             return dict(exists=True,
-                           skey=rows[0][1])
+                        skey=rows[0][1])
         else:
             return dict(exists=False,
-                           skey='')
+                        skey='')
     except Exception as e:
         print('====================== EXCEPTION ========================')
         print(e)
     finally:
-        print('Done checking')
-        # cursor.close()
-        # conn.close()
+        # print('Done checking')
+        cursor.close()
+        conn.close()
 
 
 def create_session(uid):
@@ -93,7 +89,7 @@ def verify_session(skey, uid):
         conn.commit()
         # print(len(rows))
         if rows:
-            if rows[0][2] == 1:
+            if rows[0][3] == 1:
                 return True
             else:
                 return False
@@ -103,7 +99,7 @@ def verify_session(skey, uid):
         print('====================== EXCEPTION ========================')
         print(e)
     finally:
-        print('Done')
+        # print('Done')
         cursor.close()
         conn.close()
 
@@ -124,7 +120,7 @@ def update_session(uid):
         print('====================== EXCEPTION ========================')
         print(e)
     finally:
-        print('Done')
+        # print('Done')
         cursor.close()
         conn.close()
 
