@@ -62,7 +62,26 @@ function checkEmail(email) { // Pass in elements as jQuery selectors
 }
 
 
-
+function logout() {
+  $.ajax({
+    type: "POST",
+    url: url + 'logout',
+    data: {
+      'skey': getData('user').skey,
+      'uid': getData('user').uid,
+    },
+    success: function(data) {
+      if (data) {
+        deleteData('user');
+        Nav.assign('home.html');
+      }
+    },
+   error: function(error) {
+     console.log(error);
+   },
+   dataType: 'json'
+  });
+}
 
 
 

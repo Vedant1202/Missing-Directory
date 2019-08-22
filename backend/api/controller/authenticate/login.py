@@ -27,11 +27,13 @@ def login():
                     if sess['exists']:
                         resp = jsonify(uid=row["uid"],
                                        skey=sess['skey'],
+                                       type=row['type'],
                                        valid=True)
                     else:
                         skey = create_session(row["uid"])
                         resp = jsonify(uid=row["uid"],
                                        skey=sess['skey'],
+                                       type=row['type'],
                                        valid=True)
 
                 else:

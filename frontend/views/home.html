@@ -108,7 +108,7 @@
               <a class="btn btn-link active-menu">Home</a><br>
               <a class="btn btn-link" id="watchingMenu">Watching</a><br>
               <a class="btn btn-link" id="faceRecogMenu">Face Recognition</a><br>
-              <a class="btn btn-link" id="logoutMenu" onclick="Nav.assign('login-register.html');">Logout</a>
+              <a class="btn btn-link" id="logout" onclick="logout();">Logout</a>
 
             </div>
         </div>
@@ -194,9 +194,9 @@
             </div>
             <div class="col-3" align="right">
               <div class="uk-margin">
-                <form class="uk-search uk-search-default">
-                  <a href="" class="uk-search-icon-flip" uk-search-icon></a>
-                  <input class="uk-search-input rounded-pill" type="search" placeholder="Search...">
+                <form class="uk-search uk-search-default" onsubmit="return false;">
+                  <button id="searchMissing" class="uk-search-icon-flip" uk-search-icon></button>
+                  <input class="uk-search-input rounded-pill" type="search" placeholder="Search..." id="missingKey">
                 </form>
               </div>
             </div>
@@ -217,7 +217,7 @@
 
     </div>
 
-    <script id="missing-card" type="text/template">
+    <script id="missing-card-reg" type="text/template">
       <!-- CARD 1 -->
       <div class="card-column">
         <div class="uk-card uk-card-default uk-card-hover border border-secondary rounded">
@@ -242,7 +242,44 @@
               </div>
               <div class="row" style="margin-top: 10px;">
                 <div class="col-6" align="center">
-                  <button class="btn btn-sm btn-outline-primary rounded-pill" id="missing-{{ mid }}" type="button">Details</button>
+                  <button class="btn btn-sm btn-outline-primary rounded-pill" onclick="details(this)" id="missing-{{ mid }}" type="button">Details</button>
+                </div>
+                <div class="col-6" align="center">
+                  <button class="btn btn-sm btn-outline-success rounded-pill" type="button" id="{{ city }}">Contact</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <script id="missing-card-unreg" type="text/template">
+      <!-- CARD 1 -->
+      <div class="card-column">
+        <div class="uk-card uk-card-default uk-card-hover border border-secondary rounded">
+          <div class="uk-card-media-top">
+              <img src="../resources/images/placeholders/users/user-black.png" alt="">
+          </div>
+          <div class="uk-card-body">
+            <h5 class="uk-card-title">{{ fname }} {{ lname }}</h5>
+            <div>
+              <div class="row">
+                <div class="col-5" align="left">
+                  <i>Age:</i> <span style="margin-left: 6px;">{{ age }}</span>
+                </div>
+                <div class="col-7" align="center">
+                  <i>Gender: </i><span style="margin-left: 6px;">{{ gender }}</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <i>Location: </i> <span style="margin-left: 6px;">{{ city }}</span>
+                </div>
+              </div>
+              <div class="row" style="margin-top: 10px;">
+                <div class="col-6" align="center">
+                  <button class="btn btn-sm btn-outline-primary rounded-pill" onclick="details(this)" id="missing-{{ mid }}" type="button">Details</button>
                 </div>
                 <div class="col-6" align="center">
                   <button class="btn btn-sm btn-outline-success rounded-pill" type="button" id="{{ city }}">Contact</button>
