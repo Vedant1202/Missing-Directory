@@ -21,6 +21,7 @@
     <script src="../js/libs/bootstrap.min.js" charset="utf-8"></script>
     <script src="../js/libs/popper.min.js" charset="utf-8"></script>
     <script src="../js/libs/mustache.js" charset="utf-8"></script>
+    <script src="../js/libs/moment.min.js" charset="utf-8"></script>
 
     <!-- UTILITY FUNCTIONS JS IMPORT -->
     <script src="../js/utils.js" charset="utf-8"></script>
@@ -150,8 +151,8 @@
                       <!-- <p><i class="text-muted">Date of Birth </i> : 10/10/1996</p> -->
                       <!-- <p><i class="text-muted">Age </i> : 19 years</p> -->
                       <p><i class="text-muted">Home Address</i> : {{ address }}</p>
-                      <p><i class="text-muted">Nationality</i> : Indian</p>
-                      <p><i class="text-muted">Languages known</i> : English,Hindi</p> <br>
+                      <p><i class="text-muted">Nationality</i> : {{ nationality }}</p>
+                      <p><i class="text-muted">Languages known</i> : {{ languages_known }}</p> <br>
                     </div>
                   </div>
                 </div>
@@ -182,19 +183,15 @@
                   <p><i class="text-muted">Medical Conditions</i> : {{ conditions }}</p>
                   <p><i class="text-muted">Medications</i> : {{ medications }}</p>
                   <p><i class="text-muted">Prescribed By</i> : {{ prescribed_by }}</p>
-                  <p><i class="text-muted">Any other details</i> :</p>
+                  <p><i class="text-muted">Any other details</i> : </p>
                   <ol class="rounded border" style="padding-top: 10px; padding-bottom: 10px; width:90%;">
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    {{ other_med }}
                   </ol>
                 </div>
                 <div class="col-6">
                   <p><i class="text-muted">Medical History</i> :</p>
                   <ol class="rounded border" style="padding-top: 10px; padding-bottom: 10px; width:90%;">
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    {{ med_hist }}
                   </ol>
                 </div>
               </div>
@@ -204,202 +201,65 @@
               <h4> <b>Contact Details </b> </h4> <hr>
               <div class="row">
                 <div class="col-6">
-                  <p><i class="text-muted">Family Phone Number</i> : <b> 1234567890</b></p>
-                  <p><i class="text-muted">Case registered police station number</i> : <b> 34567</b></p>
-                  <p><i class="text-muted">Police station address</i> :<b> Matunga,Mumbai </b></p>
-                  <p><i class="text-muted">Police station contact number</i> : <b> +100-6785 </b></p>
+                  <p><i class="text-muted">Family Phone Number</i> : <b> {{ fam_phone }}</b></p>
+                  <p><i class="text-muted">Case registered police station number</i> : <b> {{ pol_phone }}</b></p>
+                  <p><i class="text-muted">Police station address</i> :<b> {{ pol_address }} </b></p>
+                  <!-- <p><i class="text-muted">Police station contact number</i> : <b> +100-6785 </b></p> -->
                 </div>
               </div>
             </div>
             <div class="section">
               <h4> <b>Missing Report </b> </h4> <hr>
-              <div class="row">
-                <div class="col-6">
-                  <span uk-icon="icon: chevron-double-right"></span>
-                  Last seen at Thane (1 hour ago)
 
-                </div>
-                <div class="col-6">
-                  <a  href="#modal-center" uk-toggle>  Details >></a>
-                </div>
-              </div> <br>
-              <div class="row">
-                <div class="col-6">
-                  <span uk-icon="icon: chevron-double-right"></span>
-                  Last seen at Ghatkopar (2 days ago)
-                </div>
-                <div class="col-6">
-                  <a  href="#modal-center" uk-toggle> Details >></a>
-                </div>
-              </div> <br>
-              <div class="row">
-                <div class="col-6">
-                  <span uk-icon="icon: chevron-double-right"></span>
-                  Last seen at Kurla (1 week ago)
-                </div>
-                <div class="col-6">
-                  <a  href="#modal-center" uk-toggle> Details >></a>
-                </div>
-              </div> <br>
-              <div class="row">
-                <div class="col-6">
-                  <span uk-icon="icon: chevron-double-right"></span>
-                  Last seen at Dadar (1 month)
-                </div>
-                <div class="col-6">
-                  <a  href="#modal-center" uk-toggle> Details >></a>
-                </div>
-              </div> <br>
-              <div class="row">
-                <div class="col-6">
-                  <span uk-icon="icon: chevron-double-right"></span>
-                  Missing Registered at Matunga (2 months ago)
-                </div>
-                <div class="col-6">
-                  <a  href="#modal-center" uk-toggle> Details >></a>
-                </div>
-              </div> <br>
-
-              <div id="modal-center" class="uk-flex-top" uk-modal>
-                <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-                  <button class="uk-modal-close-default" type="button" uk-close></button>
-                  <div class="section">
-                    <center>
-                      <h4> <b>Last Seen at Thane</b> </h4>
-                    </center> <hr>
-                    <div class="row">
-                      <div class="col-12">
-                        <p>Detailed location: <b>Naupada,Thane West </b> </p>
-                        <p>Reported By: <b> Mr.ABC </b></p>
-                        <p>User Type: <b>Official </b></p>
-                        <p>Designation: <b>Inspector </b></p>
-                        <p>Time Reported: <b>16:30 </b></p>
-                        <p>Date Reported: <b>13-08-2019</b> </p>
-                        <p>Additional Info: <b>None </b></p>
-
-                        <center>
-                          <button type="button" class="btn btn-outline-primary">OK</button>
-                        </center>
-                      </div>
-
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-              <div id="modal-center" class="uk-flex-top" uk-modal>
-                <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-                  <button class="uk-modal-close-default" type="button" uk-close></button>
-                  <div class="section">
-                    <center>
-                      <h4> <b>Last Seen at Thane</b> </h4>
-                    </center> <hr>
-                    <div class="row">
-                      <div class="col-12">
-                        <p>Detailed location: <b>Naupada,Thane West </b> </p>
-                        <p>Reported By: <b> Mr.ABC </b></p>
-                        <p>User Type: <b>Official </b></p>
-                        <p>Designation: <b>Inspector </b></p>
-                        <p>Time Reported: <b>16:30 </b></p>
-                        <p>Date Reported: <b>13-08-2019</b> </p>
-                        <p>Additional Info: <b>None </b></p>
-
-                        <center>
-                          <button type="button" class="btn btn-outline-primary">OK</button>
-                        </center>
-                      </div>
-
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-              <div id="modal-center" class="uk-flex-top" uk-modal>
-                <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-                  <button class="uk-modal-close-default" type="button" uk-close></button>
-                  <div class="section">
-                    <center>
-                      <h4> <b>Last Seen at Thane</b> </h4>
-                    </center> <hr>
-                    <div class="row">
-                      <div class="col-12">
-                        <p>Detailed location: <b>Naupada,Thane West </b> </p>
-                        <p>Reported By: <b> Mr.ABC </b></p>
-                        <p>User Type: <b>Official </b></p>
-                        <p>Designation: <b>Inspector </b></p>
-                        <p>Time Reported: <b>16:30 </b></p>
-                        <p>Date Reported: <b>13-08-2019</b> </p>
-                        <p>Additional Info: <b>None </b></p>
-
-                        <center>
-                          <button type="button" class="btn btn-outline-primary">OK</button>
-                        </center>
-                      </div>
-
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-              <div id="modal-center" class="uk-flex-top" uk-modal>
-                <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-                  <button class="uk-modal-close-default" type="button" uk-close></button>
-                  <div class="section">
-                    <center>
-                      <h4> <b>Last Seen at Thane</b> </h4>
-                    </center> <hr>
-                    <div class="row">
-                      <div class="col-12">
-                        <p>Detailed location: <b>Naupada,Thane West </b> </p>
-                        <p>Reported By: <b> Mr.ABC </b></p>
-                        <p>User Type: <b>Official </b></p>
-                        <p>Designation: <b>Inspector </b></p>
-                        <p>Time Reported: <b>16:30 </b></p>
-                        <p>Date Reported: <b>13-08-2019</b> </p>
-                        <p>Additional Info: <b>None </b></p>
-
-                        <center>
-                          <button type="button" class="btn btn-outline-primary">OK</button>
-                        </center>
-                      </div>
-
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-              <div id="modal-center" class="uk-flex-top" uk-modal>
-                <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-                  <button class="uk-modal-close-default" type="button" uk-close></button>
-                  <div class="section">
-                    <center>
-                      <h4> <b>Last Seen at Thane</b> </h4>
-                    </center> <hr>
-                    <div class="row">
-                      <div class="col-12">
-                        <p>Detailed location: <b>Naupada,Thane West </b> </p>
-                        <p>Reported By: <b> Mr.ABC </b></p>
-                        <p>User Type: <b>Official </b></p>
-                        <p>Designation: <b>Inspector </b></p>
-                        <p>Time Reported: <b>16:30 </b></p>
-                        <p>Date Reported: <b>13-08-2019</b> </p>
-                        <p>Additional Info: <b>None </b></p>
-
-                        <center>
-                          <button type="button" class="btn btn-outline-primary">OK</button>
-                        </center>
-                      </div>
-
-                    </div>
-
-                  </div>
-                </div>
-              </div>
             </div>
 
           </div>
 
     </script>
+
+
+    <script type="text/template" id="report">
+
+      <div class="row">
+        <div class="col-6">
+          <span uk-icon="icon: chevron-double-right"></span>
+          Last seen at {{ location }}
+        </div>
+        <div class="col-6">
+          <a  href="#modalcenter-{{ rid }}" uk-toggle> Details >></a>
+        </div>
+      </div> <br>
+
+      <div id="modalcenter-{{ rid }}" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+          <button class="uk-modal-close-default" type="button" uk-close></button>
+          <div class="section">
+            <center>
+              <h4> <b>Last Seen at {{ location }}</b> </h4>
+            </center> <hr>
+            <div class="row">
+              <div class="col-12">
+                <p>Detailed location: <b>{{ location }} </b> </p>
+                <p>Reported By: <b> {{ fname }} </b></p>
+                <p>User Type: <b>{{ type }} </b></p>
+                <!-- <p>Designation: <b>{{}} </b></p> -->
+                <p>Time Reported: <b>{{ time }} </b></p>
+                <p>Date Reported: <b> {{ date_created }}</b> </p>
+                <p>Additional Info: <b>{{ desc }} </b></p>
+
+                <center>
+                  <button type="button" class="btn btn-outline-primary">OK</button>
+                </center>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </script>
+
 
 
 

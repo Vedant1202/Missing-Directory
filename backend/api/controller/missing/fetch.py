@@ -113,7 +113,7 @@ def missing_fetch_reg_user():
 
         # validate the received values
         if _skey and _uid and _mid and request.method == "POST" and verify_session(_skey, _uid):
-            sql = "SELECT * FROM missing WHERE mid=%s;"
+            sql = "SELECT * FROM missing;"
             data = (_mid)
             conn = mysql.connect()
             cursor = conn.cursor()

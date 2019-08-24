@@ -18,9 +18,15 @@ from controller.user.fetch import user_fetch
 from controller.missing.fetch import missing_fetch_reg, missing_fetch_unreg, missing_fetch_reg_user, missing_fetch_unreg_user, missing_fetch_search_reg, missing_fetch_search_unreg
 from controller.missing.add import missing_add
 from controller.report.add import report_add
+from utils.utils import upload_file
 
 
 CORS(app)
+
+
+import os
+from flask import Flask, request, redirect, url_for
+from werkzeug.utils import secure_filename
 
 
 ###############################################################################
@@ -117,6 +123,15 @@ def add_missing():
 # # @cross_origin()
 def add_report():
     return report_add()
+
+
+
+# # missing profiles add route
+@app.route("/file", methods=["POST"])
+# # @cross_origin()
+def file_upload():
+    return upload_file()
+
 
 # user add route
 # @app.route("/user/edit", methods=["POST"])
