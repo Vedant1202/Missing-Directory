@@ -261,17 +261,17 @@
             Detailed Location:
           </div>
           <div class="col-9">
-            <textarea rows="8" cols="80"  class="uk-input rounded" placeholder="Location of Last Seen" ></textarea>
+            <textarea id="loc" rows="8" cols="80"  class="uk-input rounded" placeholder="Location of Last Seen" ></textarea>
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-3">
             Reported By:
           </div>
           <div class="col-9">
-            <input type="text"  class="uk-input rounded" placeholder="Your Name"><br>
+            <input type="text" id="name" class="uk-input rounded" placeholder="Your Name"><br>
           </div>
-        </div>
+        </div> -->
     <!-- <label>Username: </label> -->
       <!-- <div class="row">
         <div class="col-3">
@@ -282,42 +282,50 @@
         </div>
       </div> -->
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-3">
             Designation:
           </div>
           <div class="col-9">
-            <input type="text"  class="uk-input rounded" placeholder="Designation"><br>
+            <input type="text" id="des" class="uk-input rounded" placeholder="Designation"><br>
           </div>
-        </div>
+        </div> -->
         <div class="row">
           <div class="col-3">
             Time:
           </div>
           <div class="col-9">
-            <input type="time"  class="uk-input rounded" placeholder="Hr:Min"><br>
+            <input type="time" id="time" class="uk-input rounded" placeholder="Hr:Min"><br>
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-3">
             Date Reported:
           </div>
           <div class="col-9">
-            <input type="date"  class="uk-input rounded"><br>
+            <input type="date" id="date" class="uk-input rounded"><br>
           </div>
-        </div>
+        </div> -->
         <div class="row">
           <div class="col-3">
             Additional Info:
           </div>
           <div class="col-9">
-            <textarea rows="8" cols="80" class="uk-input rounded" placeholder="Additional Information"></textarea>
+            <textarea rows="8" cols="80" id="info" class="uk-input rounded" placeholder="Additional Information"></textarea>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 40px;">
+          <div class="col-12" align="center">
+            <button class="btn btn-primary rounded-pill" id="submit" type="button" style="padding-right: 25px;">Submit</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<script src="../js/first_report.js" charset="utf-8"></script>
 
 </body>
 </html>

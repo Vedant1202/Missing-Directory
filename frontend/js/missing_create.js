@@ -5,7 +5,7 @@ if (!checkData('user')) {
 
 
 
-$('#missing').click(function () {
+$('#next').click(function () {
 
   var fname = $('#fname').val().trim(),
       lname = $('#lname').val().trim(),
@@ -32,53 +32,54 @@ $('#missing').click(function () {
       pol_address = $('#pol_address').val().trim();
 
 
-      if (fname && pol_phone && pol_address) {
+    if (fname && pol_phone && pol_address) {
 
-        $.ajax({
-          type: "POST",
-          url: url + 'missing/fetch/reg',
-          data: {
-            'skey': getData('user').skey,
-            'uid': getData('user').uid,
-            'fname': fname,
-            'lname': lname,
-            'alias': alias,
-            'gender': gender,
-            'age': age,
-            'address': address,
-            'city': city,
-            'nationality': nationality,
-            'languages_know': lang,
-            'height': height,
-            'weight': weight,
-            'identifications': identifications,
-            'eye_color': eye_color,
-            'skin_color': skin_color,
-            'hair_color': hair_color,
-            'conditions': conditions,
-            'medications': medications,
-            'prescribed_by': prescribed_by,
-            'med_hist': med_hist,
-            'other_med': other_med,
-            'fam_phone': fam_phone,
-            'pol_phone': pol_phone,
-            'pol_address': pol_address
-          },
-          success: function(data) {
-            if (data.valid) {
-              setData('newMissingMID', JSON.stringify({'mid': data.mid}));
-              Nav.assign('first_report.html');
-            }
-          },
-         error: function(error) {
-           console.log(error);
-         },
-         dataType: 'json'
-        });
+      $.ajax({
+        type: "POST",
+        url: url + 'missing/add',
+        data: {
+          'skey': getData('user').skey,
+          'uid': getData('user').uid,
+          'fname': fname,
+          'lname': lname,
+          'alias': alias,
+          'gender': gender,
+          'age': age,
+          'address': address,
+          'city': city,
+          'nationality': nationality,
+          'languages_known': lang,
+          'height': height,
+          'weight': weight,
+          'identifications': identifications,
+          'eye_color': eye_color,
+          'skin_color': skin_color,
+          'hair_color': hair_color,
+          'conditions': conditions,
+          'medications': medications,
+          'prescribed_by': prescribed_by,
+          'med_hist': med_hist,
+          'other_med': other_med,
+          'fam_phone': fam_phone,
+          'pol_phone': pol_phone,
+          'pol_address': pol_address
+        },
+        success: function(data) {
+          if (data.valid) {
+            setData('newMissingMID', JSON.stringify({'mid': data.data[0]}));
+            console.log(data);
+            Nav.assign('first_report.html');
+          }
+        },
+       error: function(error) {
+         console.log(error);
+       },
+       dataType: 'json'
+      });
 
-      } else {
-        alert('Please fill in the required fields');
-      }
+    } else {
+      alert('Please fill in the required fields');
+    }
 
 
 });

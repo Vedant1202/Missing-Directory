@@ -17,6 +17,7 @@ from controller.user.update import user_update
 from controller.user.fetch import user_fetch
 from controller.missing.fetch import missing_fetch_reg, missing_fetch_unreg, missing_fetch_reg_user, missing_fetch_unreg_user, missing_fetch_search_reg, missing_fetch_search_unreg
 from controller.missing.add import missing_add
+from controller.report.add import report_add
 
 
 CORS(app)
@@ -110,6 +111,12 @@ def fetch_missing_search_unreg():
 def add_missing():
     return missing_add()
 
+
+# # missing profiles add route
+@app.route("/report/add", methods=["POST"])
+# # @cross_origin()
+def add_report():
+    return report_add()
 
 # user add route
 # @app.route("/user/edit", methods=["POST"])

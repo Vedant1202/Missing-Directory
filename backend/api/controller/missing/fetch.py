@@ -51,6 +51,7 @@ def missing_fetch_reg(stepsize=20):
         # validate the received values
         if _skey and _uid and _start and _end and request.method == "POST":
             sql = "SELECT * FROM missing;"
+            # data = (_uid)
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute(sql)
