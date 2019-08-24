@@ -502,7 +502,20 @@
                   </div>
                 </div>
                 <div class="section">
-                  <h4> <b>Missing Report </b> </h4> <hr>
+                  <div class="row">
+                    <div class="col-10">
+                      <h4> <b>Missing Report </b> </h4>
+                    </div>
+                    <div class="col-2">
+                      <a  href="#modal-create" uk-toggle>Create New Report</a>
+                    </div>
+                    <hr>
+                  </div>
+                </div>
+
+
+
+
                   <div class="row">
                     <div class="col-6">
                       <span uk-icon="icon: chevron-double-right"></span>
@@ -549,6 +562,41 @@
                       <a  href="#modal-center" uk-toggle> Details >></a>
                     </div>
                   </div> <br>
+
+                  <div id="modal-create" class="uk-flex-top" uk-modal>
+                    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+                      <div class="conatiner-fluid results">
+                        <div class="row">
+                          <div class="col-4">
+                            City:
+                          </div>
+                          <div class="col-8">
+                            <input type="text" class="uk-input rounded" placeholder="City">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-4">
+                            Detailed Location:
+                          </div>
+                          <div class="col-8">
+                            <textarea rows="8" cols="80"  class="uk-input rounded" placeholder="Location of Last Seen" ></textarea>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-4">
+                            Additional Information:
+                          </div>
+                          <div class="col-8">
+                            <textarea rows="8" cols="80"  class="uk-input rounded" placeholder="Location of Last Seen" ></textarea>
+                          </div>
+                        </div>
+                        <div align="right">
+                          <input type="submit" class="btn btn-info" value="Submit Button">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                   <div id="modal-center" class="uk-flex-top" uk-modal>
                     <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
