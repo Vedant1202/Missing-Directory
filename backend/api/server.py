@@ -10,11 +10,12 @@ from time import gmtime, strftime
 import datetime
 # from utils import getLocalTime
 
-from controller.user.add import user_add
 from controller.authenticate.login import login
 from controller.authenticate.logout import logout
+from controller.user.add import user_add
 from controller.user.update import user_update
-from controller.missing.fetch import missing_fetch, missing_fetch_search
+from controller.user.fetch import user_fetch
+from controller.missing.fetch import missing_fetch_reg, missing_fetch_unreg, missing_fetch_reg_user, missing_fetch_unreg_user, missing_fetch_search_reg, missing_fetch_search_unreg
 from controller.missing.add import missing_add
 
 
@@ -40,6 +41,13 @@ def update_user():
     return user_update()
 
 
+# user edit route
+@app.route("/user/fetch", methods=["POST"])
+# @cross_origin()
+def fetch_user():
+    return user_fetch()
+
+
 # # login route
 @app.route("/login", methods=["POST"])
 # # @cross_origin()
@@ -55,17 +63,45 @@ def logout_user():
 
 
 # # missing profiles fetch route
-@app.route("/missing/fetch", methods=["POST"])
+@app.route("/missing/fetch/reg", methods=["POST"])
 # # @cross_origin()
-def fetch_missing():
-    return missing_fetch()
+def fetch_missing_reg():
+    return missing_fetch_reg()
 
 
 # # missing profiles fetch route
-@app.route("/missing/search", methods=["POST"])
+@app.route("/missing/fetch/unreg", methods=["POST"])
 # # @cross_origin()
-def fetch_missing_search():
-    return missing_fetch_search()
+def fetch_missing_unreg():
+    return missing_fetch_unreg()
+
+
+# # missing profiles fetch route
+@app.route("/missing/fetch/profile/reg", methods=["POST"])
+# # @cross_origin()
+def fetch_missing_reg_user():
+    return missing_fetch_reg_user()
+
+
+# # missing profiles fetch route
+@app.route("/missing/fetch/profile/unreg", methods=["POST"])
+# # @cross_origin()
+def fetch_missing_unreg_user():
+    return missing_fetch_unreg_user()
+
+
+# # missing profiles fetch route
+@app.route("/missing/search/reg", methods=["POST"])
+# # @cross_origin()
+def fetch_missing_search_reg():
+    return missing_fetch_search_reg()
+
+
+# # missing profiles fetch route
+@app.route("/missing/search/unreg", methods=["POST"])
+# # @cross_origin()
+def fetch_missing_search_unreg():
+    return missing_fetch_search_unreg()
 
 
 # # missing profiles add route

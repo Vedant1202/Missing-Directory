@@ -81,7 +81,7 @@
               <a class="btn btn-link">Face Recognition</a><br>
               <a class="btn btn-link">Helpline</a><br>
               <a class="btn btn-link">About Us</a><br>
-              <a class="btn btn-link">Logout</a><br>
+              <a class="btn btn-link" id="logout" onclick="logout();">Logout</a><br>
             </div>
         </div>
     </div>
@@ -153,12 +153,11 @@
 
     <!-- ========================================= USER PROFILE VIEW =========================================== -->
     <div class="main">
-
       <div class="container">
         <div class="header">
           <div class="row">
             <div class="col-12">
-              <h2 align="center" style="margin: 0; padding: 0;">My Profile</h2>
+              <h2 align="center" style="margin: 0; padding: 0;">Create a new missing profile</h2>
             </div>
           </div>
         </div>
@@ -180,14 +179,8 @@
           </div>
           <div class="col-9" style="padding:20px;">                        <!-- General Details -->
             <div class="row">
-              <div class="col-10">
+              <div class="col-12">
                 <h4><strong>General Details</strong></h4>
-              </div>
-              <div class="col-1">
-                <a href="btn btn-link">Save</a>
-              </div>
-              <div class="col-1">
-                <a href="btn btn-link" style="color:#FF0000;">Cancel</a>
               </div>
             </div>
             <hr>
@@ -198,7 +191,7 @@
                   Firstname:
                 </div>
                 <div class="col-9">
-                  <input type="text"  class="uk-input rounded" placeholder="Firstname"><br>
+                  <input type="text" id="fname" class="uk-input rounded" placeholder="Firstname"><br>
                 </div>
               </div>
               <div class="row">
@@ -206,7 +199,7 @@
                   Lastname:
                 </div>
                 <div class="col-9">
-                  <input type="text"  class="uk-input rounded" placeholder="Lastname"><br>
+                  <input type="text" id="lname" class="uk-input rounded" placeholder="Lastname"><br>
                 </div>
               </div>
               <!-- <label>Username: </label> -->
@@ -215,7 +208,7 @@
                   Alias:
                 </div>
                 <div class="col-9">
-                  <input type="text"  class="uk-input rounded" placeholder="Alias" ><br>
+                  <input type="text" id="alias" class="uk-input rounded" placeholder="Alias" ><br>
                 </div>
               </div>
 
@@ -224,19 +217,20 @@
                   Gender:
                 </div>
                 <div class="col-9">
-                  <select class="uk-input rounded">
+                  <select class="uk-input rounded" id="gender">
+                    <option selected disabled>Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
-                    <option value="Others">Others</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
               </div>
               <div class="row">
                 <div class="col-3">
-                  Date Of Birth:
+                  Age:
                 </div>
                 <div class="col-9">
-                  <input type="date"  class="uk-input rounded"><br>
+                  <input type="number" id="age" class="uk-input rounded" placeholder="Enter age in years"><br>
                 </div>
               </div>
               <div class="row">
@@ -244,7 +238,15 @@
                   Home Address:
                 </div>
                 <div class="col-9">
-                  <input type="text"  class="uk-input rounded" placeholder="Address"><br>
+                  <input type="text" id="address" class="uk-input rounded" placeholder="Address"><br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3">
+                  City:
+                </div>
+                <div class="col-9">
+                  <input type="text" id="city" class="uk-input rounded" placeholder="City"><br>
                 </div>
               </div>
               <div class="row">
@@ -252,7 +254,7 @@
                   Nationality:
                 </div>
                 <div class="col-9">
-                  <input type="text" class="uk-input rounded" placeholder="Nationality"><br>
+                  <input type="text" id="nationality" class="uk-input rounded" placeholder="Nationality"><br>
                 </div>
               </div>
               <div class="row">
@@ -260,7 +262,7 @@
                   Languages Known:
                 </div>
                 <div class="col-9">
-                  <input type="text" class="uk-input rounded" placeholder="Languages"><br>
+                  <input type="text" id="lang" class="uk-input rounded" placeholder="Languages known (seperated by commas ',')"><br>
                 </div>
               </div>
             <!-- </form> -->
@@ -283,7 +285,7 @@
               Height:
             </div>
             <div class="col-9">
-              <input type="number"  class="uk-input rounded" placeholder="Enter Height in cm"><br>
+              <input type="number" id="height" class="uk-input rounded" placeholder="Enter Height in cm"><br>
             </div>
           </div>
           <div class="row">
@@ -291,7 +293,7 @@
               Weight:
             </div>
             <div class="col-9">
-              <input type="number"  class="uk-input rounded" placeholder="Enter Weight in kg"><br>
+              <input type="number" id="weight" class="uk-input rounded" placeholder="Enter Weight in kg"><br>
             </div>
           </div>
           <!-- <label>Username: </label> -->
@@ -300,7 +302,7 @@
               Identification:
             </div>
             <div class="col-9">
-              <input type="text"  class="uk-input rounded" placeholder="Any Birth Mark on Body" ><br>
+              <input type="text" id="identifications" class="uk-input rounded" placeholder="Any Birth Mark on Body" ><br>
             </div>
           </div>
 
@@ -309,7 +311,7 @@
               Eye Color:
             </div>
             <div class="col-9">
-              <input type="text"  class="uk-input rounded" placeholder="Color of Eye lens" ><br>
+              <input type="text" id="eye_color" class="uk-input rounded" placeholder="Color of Eye lens" ><br>
             </div>
           </div>
           <div class="row">
@@ -317,7 +319,7 @@
               Skin Color:
             </div>
             <div class="col-9">
-              <input type="text"  class="uk-input rounded" placeholder="Shade of skin"><br>
+              <input type="text" id="skin_color" class="uk-input rounded" placeholder="Shade of skin"><br>
             </div>
           </div>
           <div class="row">
@@ -325,7 +327,7 @@
               Hair Color:
             </div>
             <div class="col-9">
-              <input type="text"  class="uk-input rounded" placeholder="Color of Hair"><br>
+              <input type="text" id="hair_color" class="uk-input rounded" placeholder="Color of Hair"><br>
             </div>
           </div>
         </div>
@@ -343,10 +345,10 @@
             <!-- <form action="index.html" method="post"> -->
               <div class="row">
                 <div class="col-3">
-                  Allergy:
+                  Medical conditions:
                 </div>
                 <div class="col-9">
-                  <input type="text"  class="uk-input rounded" placeholder="Allergy"><br>
+                  <input type="text" id="conditions" class="uk-input rounded" placeholder="Medical conditions (if any seperated by commas (','))"><br>
                 </div>
               </div>
               <div class="row">
@@ -354,7 +356,15 @@
                   Medications:
                 </div>
                 <div class="col-9">
-                  <input type="text"  class="uk-input rounded" placeholder="Medication"><br>
+                  <input type="text" id="medications" class="uk-input rounded" placeholder="Medications (if any seperated by commas (','))"><br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3">
+                  Prescribed By:
+                </div>
+                <div class="col-9">
+                  <input type="text" id="prescribed_by" class="uk-input rounded" placeholder="Prescribed by: Doctor name, Clinic name and address"><br>
                 </div>
               </div>
             <!-- <label>Username: </label> -->
@@ -363,7 +373,7 @@
                   Medical history:
                 </div>
                 <div class="col-9">
-                  <textarea rows="8" cols="80"  class="uk-input rounded" placeholder="Medical History" ></textarea>
+                  <textarea rows="8" id="med_hist" cols="80"  class="uk-input rounded" placeholder="Medical History" ></textarea>
                 </div>
               </div>
 
@@ -372,7 +382,7 @@
                   Any Other Details:
                 </div>
                 <div class="col-9">
-                  <textarea rows="8" cols="80"  class="uk-input rounded" placeholder="Additional details" ></textarea>
+                  <textarea rows="8" cols="80" id="other_med" class="uk-input rounded" placeholder="Additional details" ></textarea>
                 </div>
               </div>
             </div>
@@ -393,7 +403,7 @@
                   Family Contact Number:
                 </div>
                 <div class="col-8">
-                  <input type="number"  class="uk-input rounded" placeholder="Relative or Family member Number"><br>
+                  <input type="number" id="fam_phone" class="uk-input rounded" placeholder="Relative or Family member Number"><br>
                 </div>
               </div>
               <div class="row">
@@ -401,7 +411,7 @@
                   Case Registered Police Station Number:
                 </div>
                 <div class="col-8">
-                  <input type="number"  class="uk-input rounded" placeholder="Case Number"><br>
+                  <input type="number" id="pol_phone" class="uk-input rounded" placeholder="Police Station Contact Number"><br>
                 </div>
               </div>
             <!-- <label>Username: </label> -->
@@ -410,91 +420,21 @@
                   Police Station Address:
                 </div>
                 <div class="col-8">
-                  <input type="text"  class="uk-input rounded" placeholder="Address of Police Station"><br>
+                  <input type="text" id="pol_address" class="uk-input rounded" placeholder="Address of Police Station"><br>
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-4">
-                  Police Station Contact Number:
-                </div>
-                <div class="col-8">
-                  <input type="number"  class="uk-input rounded" placeholder="Contact number of police station"><br>
-                </div>
-              </div>
             </div>
           </div>
         </div>
 
-        <div class="container-fluid results">                                    <!-- Report Details -->
-          <div class="row">
-            <div class="col-12">
-              <div class="col-4">
-                <h4><strong>First Report</strong></h4>
-              </div>
-
-              <hr>
-            <!-- <form action="index.html" method="post"> -->
+            <div class="container-fluid results">
               <div class="row">
-                <div class="col-3">
-                  Detailed Location:
-                </div>
-                <div class="col-9">
-                  <textarea rows="8" cols="80"  class="uk-input rounded" placeholder="Location of Last Seen" ></textarea>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-3">
-                  Reported By:
-                </div>
-                <div class="col-9">
-                  <input type="text"  class="uk-input rounded" placeholder="Your Name"><br>
-                </div>
-              </div>
-            <!-- <label>Username: </label> -->
-              <!-- <div class="row">
-                <div class="col-3">
-                  User Type:
-                </div>
-                <div class="col-9">
-                  <input type="text"  class="uk-input rounded" placeholder="General or Official"><br>
-                </div>
-              </div> -->
-
-              <div class="row">
-                <div class="col-3">
-                  Designation:
-                </div>
-                <div class="col-9">
-                  <input type="text"  class="uk-input rounded" placeholder="Designation"><br>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-3">
-                  Time:
-                </div>
-                <div class="col-9">
-                  <input type="time"  class="uk-input rounded" placeholder="Hr:Min"><br>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-3">
-                  Date Reported:
-                </div>
-                <div class="col-9">
-                  <input type="date"  class="uk-input rounded"><br>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-3">
-                  Additional Info:
-                </div>
-                <div class="col-9">
-                  <textarea rows="8" cols="80" class="uk-input rounded" placeholder="Additional Information"></textarea>
+                <div class="col-12" align="right">
+                    <button class="btn btn-link" id="next" type="button">Next <span uk-icon="icon: arrow-right"></span></button>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+
   </body>
 </html>
