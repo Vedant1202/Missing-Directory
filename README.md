@@ -87,7 +87,7 @@
       <h4>Home Page</h4>
       <ul>
         <li>
-          Default screen <br>
+          Default screen <br> 
           <img src="https://github.com/Vedant1202/Missing-Directory/blob/master/snaps/home/default.PNG?raw=true" alt="">
         </li>
         <li>
