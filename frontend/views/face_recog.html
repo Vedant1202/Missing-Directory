@@ -108,7 +108,7 @@
               <a class="btn btn-link" onclick="Nav.assign('home.html');">Home</a><br>
               <!-- <a class="btn btn-link" id="watchingMenu" onclick="Nav.assign('');">Watching</a><br> -->
               <a class="btn btn-link" onclick="Nav.assign('missing_create.html');">Missing Create</a><br>
-              
+
               <a class="btn btn-link active-menu" id="faceRecogMenu">Face Recognition</a><br>
               <a class="btn btn-link" onclick="Nav.assign('help_line.html');">Helpline</a><br>
               <a class="btn btn-link" id="logout" onclick="logout();">Logout</a>
@@ -163,20 +163,36 @@
             <hr>
           </div>
         </div>
-        <div class="container-fluid">
-          <div class="row border-bottom" style="padding-bottom: 30px;">
-            <div class="col-2">
-              <img src="../resources/images/placeholders/users/user-white.png" alt="" style="height: 120px;">
-            </div>
-            <div class="col-10">
-              <b>User Name</b><br>
-              <button id="prof-10" type="button" class="btn btn-link" style="padding-left: 0;">Go to profile</button>
-            </div>
-          </div>
+        <div class="container-fluid" id="resCont">
+
+
+
+        </div>
+
+    </div>
+
+    <script type="text/template" id="results">
+      <div class="row border-bottom" style="padding-bottom: 30px;">
+        <div class="col-2">
+          <img src="{{ profImg }}" alt="" style="height: 120px;">
+        </div>
+        <div class="col-10">
+          <b>{{ fname }} {{ lname }}</b><br>
+          <button id="prof-{{ mid }}" type="button" class="btn goProf btn-link" style="padding-left: 0;">Go to profile</button>
         </div>
       </div>
 
-    </div>
+      <script>
+        $('.goProf').click(function () {
+          console.log('clicked');
+          var id = $(this).attr('id').split('-')[1];
+          console.log(id);
+          setData('missing-mid-details', JSON.stringify({'mid': id}));
+          Nav.assign('missing_profile.html');
+        });
+      </script>
+
+    </script>
 
     <!-- CUSTOM JS IMPORT -->
     <script src="../js/face_recog.js" charset="utf-8"></script>

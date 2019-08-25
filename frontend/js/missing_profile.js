@@ -56,6 +56,7 @@ function fetch_missing_profile_reg() {
           'fam_phone': missingPerson[23],
           'pol_phone': missingPerson[24],
           'pol_address': missingPerson[25],
+          'profImg': missingPerson[26]
         };
 
         var html = Mustache.render(template, personData);
@@ -72,7 +73,7 @@ function fetch_missing_profile_reg() {
 
 
 
-function fetch_missing_profile_reg() {
+function fetch_missing_profile_reg_report() {
   $.ajax({
     type: "POST",
     url: url + 'missing/report/fetch',
@@ -114,6 +115,8 @@ function fetch_missing_profile_reg() {
           'fam_phone': missingPerson[23],
           'pol_phone': missingPerson[24],
           'pol_address': missingPerson[25],
+          'profImg': missingPerson[26]
+          
         };
 
         var html = Mustache.render(template, personData);

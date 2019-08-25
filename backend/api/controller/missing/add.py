@@ -46,6 +46,7 @@ def missing_add():
 
         file = request.files.to_dict()['profImg']
         filename = secure_filename(file.filename)
+        filenamefull = filename
         # filename = os.path.join('E:/HackerEarth/Missing/WebApp/backend/files/missing', filename)
         filename = 'E:/HackerEarth/Missing/WebApp/backend/files/missing/' + filename
         print('hello')
@@ -54,8 +55,8 @@ def missing_add():
         # validate the received values
         if _uid and _skey and _fname and _date_created and _pol_phone and _pol_address and verify_session(_skey, _uid) and request.method == "POST":
             # save edits
-            sql = "INSERT INTO missing(fname, lname, alias, gender, age, address, city, nationality, languages_known, height, weight, identifications, eye_color, skin_color, hair_color, conditions, medications, prescribed_by, med_hist, other_med, fam_phone, pol_phone, pol_address, uid, date_created, profimg) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"
-            data = (_fname, _lname, _alias, _gender, _age, _address, _city, _nationality, _lang, _height, _weight, _identifications, _eye_color, _skin_color, _hair_color, _conditions, _medications, _prescribed_by, _med_hist, _other_med, _fam_phone, _pol_phone, _pol_address, _uid, _date_created, filename)
+            sql = "INSERT INTO missing(fname, lname, alias, gender, age, address, city, nationality, languages_known, height, weight, identifications, eye_color, skin_color, hair_color, conditions, medications, prescribed_by, med_hist, other_med, fam_phone, pol_phone, pol_address, uid, date_created, profimg, filename) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"
+            data = (_fname, _lname, _alias, _gender, _age, _address, _city, _nationality, _lang, _height, _weight, _identifications, _eye_color, _skin_color, _hair_color, _conditions, _medications, _prescribed_by, _med_hist, _other_med, _fam_phone, _pol_phone, _pol_address, _uid, _date_created, filename, filenamefull)
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute(sql, data)

@@ -108,6 +108,7 @@ def missing_fetch_unreg_user():
 
 def missing_fetch_reg_user():
     try:
+        print(request.form.getlist('mid'))
         _skey = request.form.getlist("skey")[0]
         _uid = request.form.getlist("uid")[0]
         _mid = request.form.getlist("mid")[0]
@@ -116,13 +117,14 @@ def missing_fetch_reg_user():
 
         # validate the received values
         if _skey and _uid and _mid and request.method == "POST" and verify_session(_skey, _uid):
-            sql = "SELECT * FROM missing;"
+            sql = "SELECT * FROM missing WHERE mid=%s;"
             data = (_mid)
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute(sql, data)
             rows = cursor.fetchone()
             conn.commit()
+            print(rows)
             resp = jsonify(data=rows)
             resp.status_code = 200
             # print(resp)

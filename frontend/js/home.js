@@ -111,7 +111,8 @@ function fetch_unreg(start) {
             'lname': missingPerson[2],
             'age': missingPerson[11],
             'gender': missingPerson[12],
-            'city': missingPerson[10]
+            'city': missingPerson[10],
+            'profImg': missingPerson[13]
           };
 
           var html = Mustache.render(template, personData);
@@ -153,7 +154,8 @@ function fetch_query_reg(keyword, start) {
             'age': missingPerson[16],
             'gender': missingPerson[17],
             'address': missingPerson[14],
-            'city': missingPerson[15]
+            'city': missingPerson[15],
+            'profImg': missingPerson[26]
           };
 
           var html = Mustache.render(template, personData);

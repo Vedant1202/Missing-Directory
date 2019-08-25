@@ -9,6 +9,7 @@ from flask_cors import CORS
 from time import gmtime, strftime
 import datetime
 import uuid
+# import face_recognition
 # from utils import getLocalTime
 
 from controller.authenticate.login import login
@@ -21,6 +22,7 @@ from controller.missing.add import missing_add
 from controller.report.add import report_add
 from utils.utils import upload_file
 
+from controller.face_recog.add import encoding_add
 
 CORS(app)
 
@@ -127,11 +129,17 @@ def add_report():
 
 
 
-# # missing profiles add route
-@app.route("/file", methods=["POST"])
+# # # missing profiles add route
+# @app.route("/file", methods=["POST"])
+# # # @cross_origin()
+# def file_upload():
+#     return upload_file()
+
+
+@app.route("/face_recog", methods=["POST"])
 # # @cross_origin()
 def file_upload():
-    return upload_file()
+    return encoding_add()   
 
 
 # user add route
@@ -265,6 +273,8 @@ def not_found(error=None):
 
 
 if __name__ == "__main__":
+    # import os
+    # print(os.listdir("/home/vedant/Documents/Missing-Directory/backend/files/missing/"))
     key = str(uuid.uuid4().hex + uuid.uuid4().hex)
     app.secret_key = key
     app.run()
