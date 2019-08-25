@@ -4,7 +4,6 @@ if (!checkData('user')) {
 }
 
 
-
 $('#next').click(function () {
 
   var fname = $('#fname').val().trim(),
@@ -32,38 +31,44 @@ $('#next').click(function () {
       pol_address = $('#pol_address').val().trim();
 
 
+
+
     if (fname && pol_phone && pol_address) {
+
+      var fd = new FormData();
+      fd.append('skey', getData('user').skey);
+      fd.append('uid', getData('user').uid);
+      fd.append('fname', fname);
+      fd.append('lname', lname);
+      fd.append('alias', alias);
+      fd.append('gender', gender);
+      fd.append('age', age);
+      fd.append('address', address);
+      fd.append('city', city);
+      fd.append('nationality', nationality);
+      fd.append('languages_known', lang);
+      fd.append('height', height);
+      fd.append('weight', weight);
+      fd.append('identifications', identifications);
+      fd.append('eye_color', eye_color);
+      fd.append('skin_color', skin_color);
+      fd.append('hair_color', hair_color);
+      fd.append('conditions', conditions);
+      fd.append('medications', medications);
+      fd.append('prescribed_by', prescribed_by);
+      fd.append('med_hist', med_hist);
+      fd.append('other_med', other_med);
+      fd.append('fam_phone', fam_phone);
+      fd.append('pol_phone', pol_phone);
+      fd.append('pol_address', pol_address);
+      // print()
+      fd.append('profImg', document.getElementById('profImgUpload').files[0]);
+
 
       $.ajax({
         type: "POST",
         url: url + 'missing/add',
-        data: {
-          'skey': getData('user').skey,
-          'uid': getData('user').uid,
-          'fname': fname,
-          'lname': lname,
-          'alias': alias,
-          'gender': gender,
-          'age': age,
-          'address': address,
-          'city': city,
-          'nationality': nationality,
-          'languages_known': lang,
-          'height': height,
-          'weight': weight,
-          'identifications': identifications,
-          'eye_color': eye_color,
-          'skin_color': skin_color,
-          'hair_color': hair_color,
-          'conditions': conditions,
-          'medications': medications,
-          'prescribed_by': prescribed_by,
-          'med_hist': med_hist,
-          'other_med': other_med,
-          'fam_phone': fam_phone,
-          'pol_phone': pol_phone,
-          'pol_address': pol_address
-        },
+        data: fd,
         success: function(data) {
           if (data.valid) {
             setData('newMissingMID', JSON.stringify({'mid': data.data[0]}));
@@ -74,7 +79,9 @@ $('#next').click(function () {
        error: function(error) {
          console.log(error);
        },
-       dataType: 'json'
+       dataType: 'json',
+       processData: false,
+       contentType: false
       });
 
     } else {
@@ -87,7 +94,20 @@ $('#next').click(function () {
 
 
 
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
+        reader.onload = function (e) {
+            $('#imgDisplay')
+                .attr('src', e.target.result);
+                // .width(150)
+                // .height(200);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 
 
 

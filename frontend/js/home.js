@@ -72,7 +72,8 @@ function fetch_reg(start) {
             'age': missingPerson[16],
             'gender': missingPerson[17],
             'address': missingPerson[14],
-            'city': missingPerson[15]
+            'city': missingPerson[15],
+            'profImg': missingPerson[26]
           };
 
           var html = Mustache.render(template, personData);

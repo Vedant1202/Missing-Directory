@@ -142,30 +142,31 @@ def calculate_age(born):
 
 
 UPLOAD_FOLDER = 'E:/HackerEarth/Missing/WebApp/backend/files/'
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
 # app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 
-def upload_file():
+def upload_file(extFolder):
     if request.method == 'POST':
         # check if the post request has the file part
-        print(request.files)
-        if 'file' not in request.files:
-            flash('No file part')
-            return redirect(request.url)
-        file = request.files['file']
-        # if user does not select file, browser also
-        # submit a empty part without filename
-        if file.filename == '':
-            flash('No selected file')
-            return redirect(request.url)
+        file = request.files.to_dict()['profImg']
+        # # if user does not select file, browser also
+        # # submit a empty part without filename
+
         if file:
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            if file.filename == '':
+                filename = 'user-white.png' ## Use default placeholder file 
+            else:
+                filename = secure_filename(file.filename)
+
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], extFolder, filename))
             return redirect(request.url)
+
+        else:
+            print('none file')
 
 
 

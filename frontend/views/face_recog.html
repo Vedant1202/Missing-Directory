@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Missing Directory | Homepage</title>
+
+    <!-- CSS LIBRARIES IMPORT -->
+    <link rel="stylesheet" href="../css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/libs/uikit.min.css">
+
+    <!-- CUSTOM CSS IMPORTS -->
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="../css/face_recog.css">
+
+    <!-- JS LIBRARIES IMPORT -->
+    <script src="../js/libs/jquery.min.js" charset="utf-8"></script>
+    <script src="../js/libs/uikit.min.js" charset="utf-8"></script>
+    <script src="../js/libs/uikit-icons.js" charset="utf-8"></script>
+    <script src="../js/libs/bootstrap.min.js" charset="utf-8"></script>
+    <script src="../js/libs/popper.min.js" charset="utf-8"></script>
+    <script src="../js/libs/mustache.js" charset="utf-8"></script>
+
+    <!-- UTILITY FUNCTIONS JS IMPORT -->
+    <script src="../js/utils.js" charset="utf-8"></script>
+
+  </head>
+  <body>
+
+
+    <!-- ========================================= NAVBAR =========================================== -->
+    <div uk-sticky="show-on-up: true; animation: uk-animation-slide-top;">
+      <nav class="uk-navbar-container navbar-main shadow" uk-navbar>
+        <div class="row" style="width: 100%;">
+          <div class="col-2" align="left" style="padding-left: 4%; padding-top: .5%;">
+            <a class="hamburger" uk-icon="icon: menu; ratio: 2" href="#offcanvas-usage" uk-toggle></a>
+          </div>
+          <div class="col-8" align="center" style="padding-top: .5%;">
+            <h1>The Missing Directory</h1>
+          </div>
+          <div class="col-2" align="right">
+            <div class="uk-inline">
+              <button class="btn btn-outline-secondary rounded-pill" type="button" id="profileBtn">
+                <div class="row">
+                  <div class="col-4" style="padding-left: 0;">
+                    <img src="../resources/images/placeholders/users/user-white.png" alt="" class="rounded-circle" style="max-width: 50px;">
+                  </div>
+                  <div class="col-8" align="center">
+                    <div style="padding-top: 20%;">Profile</div>
+                  </div>
+                </div>
+              </button>
+              <div uk-drop="mode: click">
+                <div class="uk-card uk-card-body uk-card-default rounded-lg shadow-lg">
+                  <div class="row">
+                    <div class="col-5" align="left">
+                      <img src="../resources/images/placeholders/users/user-white.png" alt="" class="rounded-circle" style="max-width: 80px;">
+                    </div>
+                    <div class="col-7" align="left" style="padding-top: 5%;">
+                      <div class="row">
+                        <b>Sample User 1</b>
+                      </div>
+                      <div class="row">
+                        Police Investigator
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row" align="center" style="margin-top: 10%;">
+                    <div class="col-12">
+                      <button class="btn btn-primary rounded-pill btn-block">View Full Profile</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-outline-secondary rounded-pill" type="button" id="logInBtn">
+                <div class="row" style="padding: 10px;">
+                  <div class="col-12" align="center">
+                    <div>Login/Register</div>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+
+    <!-- ========================================= MENU =========================================== -->
+    <div id="offcanvas-usage" uk-offcanvas="overlay: true; mode: slide;">
+        <div class="uk-offcanvas-bar bg-light">
+
+            <button class="uk-offcanvas-close uk-close-large" type="button" uk-close></button>
+
+            <div class="row" style="margin-top: 20%;">
+              <!-- <div class="col-5">
+
+              </div> -->
+              <div class="col-12">
+                <h2>
+                  The Missing Directory
+                </h2>
+                <hr style="border-color: grey; margin-bottom: 30px;">
+              </div>
+            </div>
+
+            <div class="container-fluid menubar">
+              <a class="btn btn-link" onclick="Nav.assign('home.html');">Home</a><br>
+              <!-- <a class="btn btn-link" id="watchingMenu" onclick="Nav.assign('');">Watching</a><br> -->
+              <a class="btn btn-link" onclick="Nav.assign('missing_create.html');">Missing Create</a><br>
+              
+              <a class="btn btn-link active-menu" id="faceRecogMenu">Face Recognition</a><br>
+              <a class="btn btn-link" onclick="Nav.assign('help_line.html');">Helpline</a><br>
+              <a class="btn btn-link" id="logout" onclick="logout();">Logout</a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ========================================= CONTAINER =========================================== -->
+    <div class="main">
+
+      <div class="container">
+        <div class="header">
+          <div class="row">
+            <div class="col-12" align="center">
+              <h2>Face Recognition</h2>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <input type="file" class=".d-none" id="profImgUpload" name="" value="" onchange="readURL(this);" style="display: none;">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-12" align="center">
+              <div class="uk-inline uk-light">
+                <img id="imgDisplay" src="../resources/images/placeholders/users/user-white.png" alt="" style="height: 300px;">
+                <div class="uk-position-center">
+                  <span uk-overlay-icon id="profImg" class="bg-dark rounded-circle shadow" style="padding: 10px;" onclick="$('#profImgUpload').click();"></span>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12" align="center">
+            <button type="button" class="btn btn-primary btn-lg" id="submit" style="margin-top: 4%;">Submit</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container-fluid results" style="margin-top: 8%;">
+        <div class="row">
+          <div class="col-12" align="center">
+            <h2>
+              Results
+            </h2>
+            <hr>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row border-bottom" style="padding-bottom: 30px;">
+            <div class="col-2">
+              <img src="../resources/images/placeholders/users/user-white.png" alt="" style="height: 120px;">
+            </div>
+            <div class="col-10">
+              <b>User Name</b><br>
+              <button id="prof-10" type="button" class="btn btn-link" style="padding-left: 0;">Go to profile</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CUSTOM JS IMPORT -->
+    <script src="../js/face_recog.js" charset="utf-8"></script>
+
+  </body>
+</html>

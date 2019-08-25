@@ -20,6 +20,9 @@
     <script src="../js/libs/bootstrap.min.js" charset="utf-8"></script>
     <script src="../js/libs/popper.min.js" charset="utf-8"></script>
 
+    <!-- UTILITY FUNCTIONS JS IMPORT -->
+    <script src="../js/utils.js" charset="utf-8"></script>
+
   </head>
   <body>
 
@@ -94,10 +97,14 @@
             </div>
 
             <div class="container-fluid menubar">
-              <a class="btn btn-link active-menu">Home</a><br>
-              <a class="btn btn-link">Watching</a><br>
-              <a class="btn btn-link">Face Recognition</a><br>
-              <a class="btn btn-link">Logout</a>
+              <a class="btn btn-link" onclick="Nav.assign('home.html');">Home</a><br>
+              <!-- <a class="btn btn-link" id="watchingMenu" onclick="Nav.assign('');">Watching</a><br> -->
+              <a class="btn btn-link" onclick="Nav.assign('missing_create.html');">Missing Create</a><br>
+
+              <a class="btn btn-link" id="faceRecogMenu" onclick="Nav.assign('face_recog.html');">Face Recognition</a><br>
+              <a class="btn btn-link active-menu">Helpline</a><br>
+              <a class="btn btn-link" id="logout" onclick="logout();">Logout</a>
+
 
             </div>
         </div>
@@ -205,60 +212,60 @@
         <div class="row">
           <div class="col-12">
             <div class="col-4">
-              <h3><strong>MUMBAI</strong></h3>        
+              <h3><strong>MUMBAI</strong></h3>
             </div>
           </div>
         </div>
         <hr>
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Dadar : </h4>
               </div>
               <div class="col-6">
                 9876543210
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Andheri : </h4>
               </div>
               <div class="col-6">
                 8776543213
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Bandra : </h4>
               </div>
               <div class="col-6">
                 7587654324
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Worli : </h4>
               </div>
               <div class="col-6">
                 9587654324
               </div>
-            </div>          
+            </div>
           </div>
         </div>
       </div>
@@ -269,63 +276,63 @@
           <div class="row">
             <div class="col-12">
               <div class="col-4">
-                <h3><strong>DELHI</strong></h3>        
+                <h3><strong>DELHI</strong></h3>
               </div>
             </div>
           </div>
         </div>
-        
+
         <hr>
-     
+
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Gandhi Nagar : </h4>
               </div>
               <div class="col-6">
                 8876543210
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Sadar Market : </h4>
               </div>
               <div class="col-6">
                 7765432138
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Lajpat Nagar : </h4>
               </div>
               <div class="col-6">
                 7687654388
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Connaught Place : </h4>
               </div>
               <div class="col-6">
                 7687654388
               </div>
-            </div>          
+            </div>
           </div>
         </div>
       </div>
@@ -337,50 +344,50 @@
           <div class="row">
             <div class="col-12">
               <div class="col-4">
-                <h3><strong>PUNE</strong></h3>        
+                <h3><strong>PUNE</strong></h3>
               </div>
             </div>
           </div>
         </div>
-        
+
         <hr>
-     
+
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Shivajinagar : </h4>
               </div>
               <div class="col-6">
                 8876543210
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Akurdi : </h4>
               </div>
               <div class="col-6">
                 7765432138
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Baner : </h4>
               </div>
               <div class="col-6">
                 7687654388
               </div>
-            </div>          
+            </div>
           </div>
         </div>
       </div>
@@ -391,50 +398,50 @@
           <div class="row">
             <div class="col-12">
               <div class="col-4">
-                <h3><strong>BENGALURU</strong></h3>        
+                <h3><strong>BENGALURU</strong></h3>
               </div>
             </div>
           </div>
         </div>
-        
+
         <hr>
-     
+
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Jayanagar : </h4>
               </div>
               <div class="col-6">
                 9976543210
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Domlur  : </h4>
               </div>
               <div class="col-6">
                 8770004569
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Rajajinagar  : </h4>
               </div>
               <div class="col-6">
                 7687654388
               </div>
-            </div>          
+            </div>
           </div>
         </div>
       </div>
@@ -445,50 +452,50 @@
           <div class="row">
             <div class="col-12">
               <div class="col-4">
-                <h3><strong>KOLKATA</strong></h3>        
+                <h3><strong>KOLKATA</strong></h3>
               </div>
             </div>
           </div>
         </div>
-        
+
         <hr>
-     
+
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Kalighat : </h4>
               </div>
               <div class="col-6">
                 7476543210
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Park Street  : </h4>
               </div>
               <div class="col-6">
                 9670004569
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Rajarhat  : </h4>
               </div>
               <div class="col-6">
                 8548765437
               </div>
-            </div>          
+            </div>
           </div>
         </div>
       </div>
@@ -517,47 +524,47 @@
         <div class="row">
           <div class="col-12">
             <div class="col-4">
-              <h3><strong>MUMBAI</strong></h3>        
+              <h3><strong>MUMBAI</strong></h3>
             </div>
           </div>
         </div>
         <hr>
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Moneylife Foundation</h4>
               </div>
               <div class="col-6">
                 <a href="http://foundation.moneylife.in/th_gallery/missing-persons-what-can-you-do-if-someone-goes-missing/">Click here for more info</a>
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Save Children</h4>
               </div>
               <div class="col-6">
                <a href="https://www.savethechildren.in/">Click here for more info</a>
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Arpan</h4>
               </div>
               <div class="col-6">
-               <a href="http://www.arpan.org.in/">Click here for more info</a> 
+               <a href="http://www.arpan.org.in/">Click here for more info</a>
               </div>
-            </div>          
+            </div>
           </div>
         </div>
       </div>
@@ -568,41 +575,41 @@
           <div class="row">
             <div class="col-12">
               <div class="col-4">
-                <h3><strong>DELHI</strong></h3>        
+                <h3><strong>DELHI</strong></h3>
               </div>
             </div>
           </div>
         </div>
-        
+
         <hr>
-     
+
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Cry </h4>
               </div>
               <div class="col-6">
                 <a href="https://www.cry.org/media/missing-children-in-delhi">Click here for more info</a>
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Our Work-Nav Sristi</h4>
               </div>
               <div class="col-6">
                 <a href="http://www.navsrishti.org/ourwork.php">Click here for more info</a>
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
-        
+
       </div>
 
 
@@ -612,50 +619,50 @@
           <div class="row">
             <div class="col-12">
               <div class="col-4">
-                <h3><strong>PUNE</strong></h3>        
+                <h3><strong>PUNE</strong></h3>
               </div>
             </div>
           </div>
         </div>
-        
+
         <hr>
-     
+
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Sparash India </h4>
               </div>
               <div class="col-6">
                <a href="http://sparshpune.org/program/">Click here for more info</a>
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Child HelpFoundation </h4>
               </div>
               <div class="col-6">
                 <a href="hhttps://www.childhelpfoundation.in/">Click here for more info</a>
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Missing </h4>
               </div>
               <div class="col-6">
                 <a href="https://www.savemissinggirls.com/">Click here for more info</a>
               </div>
-            </div>          
+            </div>
           </div>
         </div>
       </div>
@@ -666,37 +673,37 @@
           <div class="row">
             <div class="col-12">
               <div class="col-4">
-                <h3><strong>BENGALURU</strong></h3>        
+                <h3><strong>BENGALURU</strong></h3>
               </div>
             </div>
           </div>
         </div>
-        
+
         <hr>
-     
+
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Smile Foundation India </h4>
               </div>
               <div class="col-6">
                 <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwi_ncj4jJvkAhUPJSsKHaAsCXkYABAHGgJzZg&ohost=www.google.com&cid=CAESEeD24qxhsQU6vbVT9t0b3D-7&sig=AOD64_0_Kvg4IW3kWdBe2VF0UkbVwDrhVw&q=&ved=2ahUKEwi8jb_4jJvkAhXZR30KHfIuAdM4ChDRDHoECA8QAQ&adurl=">Click here for more info</a>
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Sampark </h4>
               </div>
               <div class="col-6">
                 <a href="http://sampark.org/">Click here for more info</a>
               </div>
-            </div>          
+            </div>
           </div>
         </div>
       </div>
@@ -707,37 +714,37 @@
           <div class="row">
             <div class="col-12">
               <div class="col-4">
-                <h3><strong>KOLKATA</strong></h3>        
+                <h3><strong>KOLKATA</strong></h3>
               </div>
             </div>
           </div>
         </div>
-        
+
         <hr>
-     
+
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Child in Need Institute - CINI </h4>
               </div>
               <div class="col-6">
                 <a href="https://www.cini-india.org/">Click here for more info</a>
               </div>
-            </div>          
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-6">
-            <div class="row"> 
+            <div class="row">
               <div class="col-6">
                 <h4>Shakti Vahini </h4>
               </div>
               <div class="col-6">
                 <a href="https://shaktivahini.org/">Click here for more info</a>
               </div>
-            </div>          
+            </div>
           </div>
         </div>
       </div>
@@ -745,8 +752,8 @@
 
 
 
-     
-    
+
+
 
 
 

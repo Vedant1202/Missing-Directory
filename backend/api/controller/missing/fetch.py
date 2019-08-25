@@ -8,6 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_cors import CORS
 import time
 from utils.utils import not_found, create_session, calculate_age, verify_session
+import os
 
 
 
@@ -19,7 +20,7 @@ def missing_fetch_unreg(stepsize=20):
 
         # validate the received values
         if _start and _end and request.method == "POST":
-            sql = "SELECT mid, fname, lname, uid, medications, conditions, height, weight, identifications, date_created, city, age, gender FROM missing;"
+            sql = "SELECT mid, fname, lname, uid, medications, conditions, height, weight, identifications, date_created, city, age, gender, profImg FROM missing;"
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute(sql)
@@ -55,7 +56,9 @@ def missing_fetch_reg(stepsize=20):
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute(sql)
+            # rows = cursor.fetchall()[0]
             rows = list(cursor.fetchall())
+            # rows[26] = os.path.join('E:/HackerEarth/Missing/WebApp/backend/files/', rows[26])
             conn.commit()
             resp = jsonify(data=rows[int(_start):_end])
             resp.status_code = 200

@@ -8,6 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_cors import CORS
 from time import gmtime, strftime
 import datetime
+import uuid
 # from utils import getLocalTime
 
 from controller.authenticate.login import login
@@ -264,4 +265,6 @@ def not_found(error=None):
 
 
 if __name__ == "__main__":
+    key = str(uuid.uuid4().hex + uuid.uuid4().hex)
+    app.secret_key = key
     app.run()

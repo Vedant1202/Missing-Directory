@@ -76,11 +76,12 @@
             </div>
 
             <div class="container-fluid menubar">
-              <a class="btn btn-link">Home</a><br>
-              <a class="btn btn-link active-menu">Watching</a><br>
-              <a class="btn btn-link">Face Recognition</a><br>
-              <a class="btn btn-link">Helpline</a><br>
-              <a class="btn btn-link">About Us</a><br>
+              <a class="btn btn-link" onclick="Nav.assign('home.html');">Home</a><br>
+              <!-- <a class="btn btn-link active-menu">Watching</a><br> -->
+              <a class="btn btn-link active-menu" onclick="Nav.assign('missing_create.html');">Missing Create</a><br>
+              <a class="btn btn-link" onclick="Nav.assign('face_recog.html');">Face Recognition</a><br>
+              <a class="btn btn-link" onclick="Nav.assign('help_line.html');">Helpline</a><br>
+              <!-- <a class="btn btn-link">About Us</a><br> -->
               <a class="btn btn-link" id="logout" onclick="logout();">Logout</a><br>
             </div>
         </div>
@@ -164,16 +165,16 @@
       </div>
     </div>
 
-    <input type="file" class=".d-none" id="profImgUpload" name="" value="">
+    <input type="file" class=".d-none" id="profImgUpload" name="" value="" onchange="readURL(this);">
 
     <div class="main">
       <div class="container-fluid results">
         <div class="row">
           <div class="col-3">
               <div class="uk-inline uk-light">
-                <img src="../resources/images/placeholders/users/user-white.png" alt="">
+                <img id="imgDisplay" src="../resources/images/placeholders/users/user-white.png" alt="">
                 <div class="uk-position-center">
-                  <span uk-overlay-icon id="profImg" onclick="$('#profImgUpload').click();"></span>
+                  <span uk-overlay-icon id="profImg" class="bg-dark rounded-circle shadow" style="padding: 10px;" onclick="$('#profImgUpload').click();"></span>
                 </div>
               </div>
           </div>
