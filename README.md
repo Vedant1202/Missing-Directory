@@ -53,8 +53,28 @@
       </ul>
     </li>
     <li>
-      <b>backend/ </b>: Backend API (yet to be done)
-    </li>
+      <b>backend/ </b>: Backend API
+      <li>
+        api/: The API files
+        <ul>
+          <li>
+            controller/: Controller functions
+          </li>
+          <li>
+            utils/: Utility functions
+          </li>
+        </ul>
+
+      </li>
+      <b>files/ </b>: static files
+      <ul>
+        <li>
+          missing/ : Missing profiles files
+        </li>
+        <li>
+          user/ : User profiles files
+        </li>
+      </ul>
   </ul>
 </p>
 <p>
